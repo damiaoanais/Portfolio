@@ -61,6 +61,8 @@
     .links a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--body); position: relative; transition: color .2s; }
     .links a::after { content: ""; position: absolute; left: 0; bottom: -4px; height: 1px; width: 0; background: var(--primary); transition: width .25s; }
     .links a:hover { color: var(--ink); }
+    .links a.active { color: var(--primary); }
+    .links a.active::after { width: 100%; }
     .links a:hover::after { width: 100%; }
 
     /* Buttons */
@@ -438,6 +440,33 @@
         var r = grid.getBoundingClientRect(), vh = window.innerHeight || 800;
         var p = (vh * 0.95 - r.top) / (vh * 0.4 + r.height);
         render(Math.max(0, Math.min(1, p)));
+      }
+      function req() { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }
+      window.addEventListener('scroll', req, { passive: true });
+      window.addEventListener('resize', req);
+      update();
+    })();
+  </script>
+  <script>
+    (function () {
+      var links = document.querySelectorAll('.links a');
+      var items = [];
+      links.forEach(function (a) {
+        var sec = document.querySelector(a.getAttribute('href'));
+        if (sec) { items.push({ a: a, sec: sec }); }
+      });
+      if (!items.length) { return; }
+      var ticking = false;
+      function update() {
+        ticking = false;
+        var current = null, y = 120;
+        items.forEach(function (it) { if (it.sec.getBoundingClientRect().top <= y) { current = it; } });
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) { current = items[items.length - 1]; }
+        items.forEach(function (it) {
+          var on = it === current;
+          it.a.classList.toggle('active', on);
+          if (on) { it.a.setAttribute('aria-current', 'location'); } else { it.a.removeAttribute('aria-current'); }
+        });
       }
       function req() { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }
       window.addEventListener('scroll', req, { passive: true });
