@@ -91,7 +91,7 @@
 
     /* Cards */
     .grid { display: grid; gap: 24px; }
-    .grid-4 { grid-template-columns: repeat(4, 1fr); margin-top: 40px; }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); margin-top: 16px; }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
     .card { background: var(--card); border: 1px solid var(--hairline); border-radius: 12px; padding: 24px; transition: transform .3s cubic-bezier(.2,.7,.2,1), border-color .3s, box-shadow .3s; }
@@ -99,6 +99,24 @@
     .card h3 { font-size: 20px; line-height: 1.3; margin-bottom: 8px; font-weight: 700; }
     .card .num { font-weight: 800; color: var(--primary); font-size: 22px; margin-bottom: 12px; display: block; }
     .card p { font-size: 16px; }
+
+
+    /* Trajet d'avion : suit le défilement, étape par étape */
+    .route { position: sticky; top: 64px; z-index: 4; height: 80px; margin-top: 28px; background: var(--canvas-soft); }
+    .route-line, .route-trail { position: absolute; left: 0; top: 19px; height: 0; }
+    .route-line { right: 0; border-top: 2px dashed var(--hairline-strong); }
+    .route-trail { width: 0; border-top: 2px solid var(--primary); }
+    .route-stop { position: absolute; top: 12px; left: var(--x); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); transition: color .3s; }
+    .route-stop:first-of-type { transform: none; align-items: flex-start; }
+    .route-stop:last-of-type { transform: translateX(-100%); align-items: flex-end; }
+    .route-stop i { width: 16px; height: 16px; border-radius: 50%; background: var(--canvas-soft); border: 2px solid var(--hairline-strong); transition: background .3s, border-color .3s, transform .3s; }
+    .route-stop.reached { color: var(--ink); }
+    .route-stop.reached i { background: var(--primary); border-color: var(--primary); transform: scale(1.15); }
+    .plane { position: absolute; left: 0; top: 20px; width: 32px; height: 32px; margin: -16px 0 0 -16px; color: var(--primary); z-index: 3; filter: drop-shadow(0 0 6px rgba(228,116,140,.45)); will-change: left; }
+    .plane svg { display: block; width: 100%; height: 100%; }
+    @media (max-width: 640px) { .route-stop { font-size: 0; gap: 0; } .route { height: 48px; } }
+    .card.step-active { border-color: var(--primary); background: #120A0C; }
+    .js .card.reveal.in.step-active { border-color: var(--primary); }
 
     /* Projects */
     .pill { display: inline-block; align-self: flex-start; font-size: 12px; font-weight: 600; letter-spacing: 0.9px; text-transform: uppercase; padding: 4px 10px; border-radius: 9999px; margin-bottom: 16px; }
@@ -245,7 +263,16 @@
         <p class="eyebrow">Mon approche</p>
         <h2>Une méthode. <span class="hl">Quatre temps.</span></h2>
         <p class="lead">Je ne construis pas pour construire. Chaque produit commence par un besoin réel et passe par un test avant d'aller plus loin.</p>
-        <div class="grid grid-4">
+        <div class="route" id="route" aria-hidden="true">
+          <div class="route-line"></div>
+          <div class="route-trail" id="trail"></div>
+          <span class="route-stop" style="--x:0%"><i></i>Comprendre</span>
+          <span class="route-stop" style="--x:33.333%"><i></i>Concevoir</span>
+          <span class="route-stop" style="--x:66.667%"><i></i>Construire</span>
+          <span class="route-stop" style="--x:100%"><i></i>Améliorer</span>
+          <div class="plane" id="plane"><svg viewBox="0 0 24 24" fill="currentColor"><g transform="rotate(90 12 12)"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></g></svg></div>
+        </div>
+        <div class="grid grid-4" id="steps">
           <article class="card"><span class="num">01</span><h3>Comprendre</h3><p>Le bon problème avant la bonne solution.</p></article>
           <article class="card"><span class="num">02</span><h3>Concevoir</h3><p>Un parcours simple, des fonctionnalités qui comptent vraiment.</p></article>
           <article class="card"><span class="num">03</span><h3>Construire</h3><p>Une version réelle, construite avec le no-code et l'IA.</p></article>
@@ -385,6 +412,37 @@
         el.classList.add('reveal');
         io.observe(el);
       });
+    })();
+  </script>
+  <script>
+    (function () {
+      var route = document.getElementById('route'), plane = document.getElementById('plane'),
+          trail = document.getElementById('trail'), grid = document.getElementById('steps');
+      if (!route || !plane || !grid) { return; }
+      var stops = route.querySelectorAll('.route-stop'), cards = grid.querySelectorAll('.card');
+      var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var ticking = false;
+      function render(p) {
+        var w = route.clientWidth;
+        plane.style.left = (p * w) + 'px';
+        trail.style.width = (p * w) + 'px';
+        for (var i = 0; i < 4; i++) {
+          var on = p >= i / 3 - 0.001 && (i > 0 || p > 0.005);
+          stops[i].classList.toggle('reached', on);
+          cards[i].classList.toggle('step-active', on);
+        }
+      }
+      function update() {
+        ticking = false;
+        if (still) { render(1); return; }
+        var r = grid.getBoundingClientRect(), vh = window.innerHeight || 800;
+        var p = (vh * 0.95 - r.top) / (vh * 0.4 + r.height);
+        render(Math.max(0, Math.min(1, p)));
+      }
+      function req() { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }
+      window.addEventListener('scroll', req, { passive: true });
+      window.addEventListener('resize', req);
+      update();
     })();
   </script>
 </body>
