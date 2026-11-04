@@ -10,7 +10,7 @@
   <meta property="og:locale" content="fr_FR">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #B8502E;
@@ -64,7 +64,7 @@
     /* Hero */
     .hero { padding: 96px 0 80px; }
     .hero h1 { font-size: clamp(36px, 7vw, 72px); line-height: 1.05; max-width: 980px; margin-bottom: 28px; }
-    .hero h1 em { font-style: normal; color: var(--primary); }
+    .hero h1 em { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 600; letter-spacing: -0.01em; color: var(--primary); }
     .hero .lead { margin-bottom: 36px; }
     .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
     .meta { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -96,7 +96,8 @@
     /* AI band */
     .ai { background: var(--sand); }
     .ai h2 { max-width: 820px; }
-    .ai .statement { font-family: var(--display); font-weight: 800; font-size: 22px; color: var(--primary); margin-top: 28px; }
+    .ai .statement { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 600; font-size: 28px; color: var(--primary); margin-top: 28px; }
+    .who { font-family: var(--display); font-weight: 700; font-size: clamp(22px, 3vw, 28px); line-height: 1.35; color: var(--ink); max-width: 820px; margin: 32px 0 8px; padding-left: 24px; border-left: 4px solid var(--primary); letter-spacing: -0.01em; }
 
     /* Skills */
     .skillbox ul { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 16px; }
@@ -168,7 +169,7 @@
       <div class="wrap">
         <p class="eyebrow">Product Builder · IA &amp; no-code · Paris</p>
         <h1>Je transforme des idées en produits digitaux avec <em>l'IA et le no-code.</em></h1>
-        <p class="lead">Je pars d'un besoin réel, je construis une première version, je la teste. Sans détour. Mon expérience du pilotage de projet digital me donne une exigence : livrer un produit clair, solide et utile.</p>
+        <p class="lead">Dynamique et souriante, j'aime cadrer. Je pars d'un besoin réel, je construis une première version, je la teste. Sans détour, avec élégance. Mon expérience du pilotage de projet digital me donne une exigence : livrer un produit clair, solide et utile.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#projets">Découvrir mes projets</a>
           <a class="btn btn-secondary" href="#contact">Me contacter</a>
@@ -282,6 +283,7 @@
         <p class="eyebrow">Parcours</p>
         <h2>Du pilotage de projet au product building.</h2>
         <p class="lead">J'ai piloté des projets digitaux en entreprise. Aujourd'hui, je me forme pour construire mes propres produits avec l'IA et le no-code.</p>
+        <p class="who">Dynamique et souriante, j'aime cadrer : poser un cap clair, un plan, puis avancer. J'ai le goût de ce qui est net, soigné et élégant, dans les produits que je construis comme dans ma façon de travailler.</p>
         <div class="timeline">
           <div class="step">
             <div class="when">En cours</div>
