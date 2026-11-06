@@ -157,6 +157,12 @@
       .ticket-desc { font-size: 16px; }
     }
 
+    .sec-top { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+    .sec-top .eyebrow { margin-bottom: 0; }
+    .see-all { text-decoration: none; font-size: 15px; font-weight: 600; color: var(--primary); white-space: nowrap; border-bottom: 1px solid transparent; transition: border-color .25s; }
+    .see-all span { display: inline-block; margin-left: 6px; transition: transform .25s; }
+    .see-all:hover { border-color: var(--primary); }
+    .see-all:hover span { transform: translateX(5px); }
     .more { margin-top: 32px; }
     .more .btn span { display: inline-block; margin-left: 8px; transition: transform .25s; }
     .more .btn:hover span { transform: translateX(5px); }
@@ -314,7 +320,10 @@
     <!-- PROJETS -->
     <section id="projets">
       <div class="wrap">
-        <p class="eyebrow">Projets</p>
+        <div class="sec-top">
+          <p class="eyebrow">Projets</p>
+          <a class="see-all" href="projets.html">Voir tous les projets<span aria-hidden="true">&rarr;</span></a>
+        </div>
         <h2>Des idées sérieuses. <span class="hl">Des statuts honnêtes.</span></h2>
         <p class="lead">Chaque projet affiche son vrai niveau d'avancement : concept, prototype ou produit en ligne. L'exigence commence par là.</p>
         <!-- Landing : 2 projets maximum. Les autres sont sur projets.html -->
@@ -337,9 +346,6 @@
               <h3>Assistant de réservation no-code</h3>
             </div>
           </article>
-        </div>
-        <div class="more">
-          <a class="btn btn-secondary" href="projets.html">Voir tous les projets <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
     </section>
