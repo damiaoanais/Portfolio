@@ -157,6 +157,13 @@
       .ticket-desc { font-size: 16px; }
     }
 
+    .go-all { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 28px; width: max-content; max-width: 100%; text-decoration: none; }
+    .go-circle { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; border: 1.5px solid var(--primary); color: var(--primary); font-size: 22px; line-height: 1; transition: background .25s, color .25s, transform .25s; }
+    .go-label { font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); transition: color .25s; }
+    .go-all:hover .go-circle, .go-all:focus-visible .go-circle { background: var(--primary); color: var(--on-primary); transform: translateX(6px); }
+    .go-all:hover .go-label { color: var(--ink); }
+    @media (prefers-reduced-motion: no-preference) { .go-circle { animation: nudge 2.4s ease-in-out infinite; } .go-all:hover .go-circle { animation: none; } }
+    @keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
     .sec-top { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
     .sec-top .eyebrow { margin-bottom: 0; }
     .see-all { text-decoration: none; font-size: 15px; font-weight: 600; color: var(--primary); white-space: nowrap; border-bottom: 1px solid transparent; transition: border-color .25s; }
@@ -320,10 +327,7 @@
     <!-- PROJETS -->
     <section id="projets">
       <div class="wrap">
-        <div class="sec-top">
-          <p class="eyebrow">Projets</p>
-          <a class="see-all" href="projets.html">Voir tous les projets<span aria-hidden="true">&rarr;</span></a>
-        </div>
+        <p class="eyebrow">Projets</p>
         <h2>Des idées sérieuses. <span class="hl">Des statuts honnêtes.</span></h2>
         <p class="lead">Chaque projet affiche son vrai niveau d'avancement : concept, prototype ou produit en ligne. L'exigence commence par là.</p>
         <!-- Landing : 2 projets maximum. Les autres sont sur projets.html -->
@@ -347,6 +351,10 @@
             </div>
           </article>
         </div>
+        <a class="go-all" href="projets.html" aria-label="Voir tous les projets">
+          <span class="go-circle" aria-hidden="true">&rarr;</span>
+          <span class="go-label">Tous les projets</span>
+        </a>
       </div>
     </section>
 
