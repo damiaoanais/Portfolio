@@ -157,6 +157,10 @@
       .ticket-desc { font-size: 16px; }
     }
 
+    .more { margin-top: 32px; }
+    .more .btn span { display: inline-block; margin-left: 8px; transition: transform .25s; }
+    .more .btn:hover span { transform: translateX(5px); }
+
     /* AI band */
     .ai { background: var(--canvas-soft); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
     .ai h2 { max-width: 820px; }
@@ -313,6 +317,7 @@
         <p class="eyebrow">Projets</p>
         <h2>Des idées sérieuses. <span class="hl">Des statuts honnêtes.</span></h2>
         <p class="lead">Chaque projet affiche son vrai niveau d'avancement : concept, prototype ou produit en ligne. L'exigence commence par là.</p>
+        <!-- Landing : 2 projets maximum. Les autres sont sur projets.html -->
         <div class="grid" style="margin-top: 40px; grid-template-columns: 1fr;">
           <article class="ticket">
             <div class="ticket-main">
@@ -323,6 +328,9 @@
               <h3>Newsletter de veille sectorielle par IA</h3>
             </div>
           </article>
+        </div>
+        <div class="more">
+          <a class="btn btn-secondary" href="projets.html">Voir tous les projets <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
     </section>
