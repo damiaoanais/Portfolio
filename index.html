@@ -173,6 +173,17 @@
     .more .btn span { display: inline-block; margin-left: 8px; transition: transform .25s; }
     .more .btn:hover span { transform: translateX(5px); }
 
+    /* Fil d'outils en boucle */
+    .tools { margin-top: 40px; }
+    .tools-title { font-size: 12px; font-weight: 600; letter-spacing: 0.9px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .marquee { display: flex; overflow: hidden; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 18px 0; }
+    .track { flex: none; display: flex; gap: 14px; padding-right: 14px; margin: 0; list-style: none; animation: scroll-x 32s linear infinite; }
+    .marquee:hover .track { animation-play-state: paused; }
+    .tool { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; font-family: var(--display); font-weight: 700; font-size: 18px; color: var(--ink); border: 1px solid var(--hairline-strong); border-radius: 9999px; padding: 8px 20px 8px 10px; background: var(--card); }
+    .tool i { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--primary); color: var(--primary); font-style: normal; font-size: 14px; font-weight: 800; }
+    @keyframes scroll-x { to { transform: translateX(-100%); } }
+    @media (prefers-reduced-motion: reduce) { .marquee { overflow-x: auto; } .track { animation: none; } .track[aria-hidden="true"] { display: none; } }
+
     /* AI band */
     .ai { background: var(--canvas-soft); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
     .ai h2 { max-width: 820px; }
@@ -398,7 +409,13 @@
             </ul>
           </article>
         </div>
-        <p class="note"><strong style="color: var(--ink);">Outils explorés :</strong> Claude, Make, n8n, Airtable, Bubble, Softr, Cursor, Lovable, React.</p>
+        <div class="tools">
+          <p class="tools-title">Outils explorés</p>
+          <div class="marquee" aria-label="Outils explorés : Claude, Make, n8n, Airtable, Bubble, Softr, Cursor, Lovable, React">
+            <ul class="track"><li class="tool"><i aria-hidden="true">C</i>Claude</li><li class="tool"><i aria-hidden="true">M</i>Make</li><li class="tool"><i aria-hidden="true">N</i>n8n</li><li class="tool"><i aria-hidden="true">A</i>Airtable</li><li class="tool"><i aria-hidden="true">B</i>Bubble</li><li class="tool"><i aria-hidden="true">S</i>Softr</li><li class="tool"><i aria-hidden="true">C</i>Cursor</li><li class="tool"><i aria-hidden="true">L</i>Lovable</li><li class="tool"><i aria-hidden="true">R</i>React</li></ul>
+            <ul class="track" aria-hidden="true"><li class="tool"><i aria-hidden="true">C</i>Claude</li><li class="tool"><i aria-hidden="true">M</i>Make</li><li class="tool"><i aria-hidden="true">N</i>n8n</li><li class="tool"><i aria-hidden="true">A</i>Airtable</li><li class="tool"><i aria-hidden="true">B</i>Bubble</li><li class="tool"><i aria-hidden="true">S</i>Softr</li><li class="tool"><i aria-hidden="true">C</i>Cursor</li><li class="tool"><i aria-hidden="true">L</i>Lovable</li><li class="tool"><i aria-hidden="true">R</i>React</li></ul>
+          </div>
+        </div>
       </div>
     </section>
 
