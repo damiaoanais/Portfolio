@@ -1,0 +1,421 @@
+# ============================================================
+# PORTFOLIO CONTENT — ANAÏS DAMIAO
+# Version 4 — 6 novembre 2026 (reflète le site en ligne)
+# Profil : Product Builder · IA & No-code
+# Règle : tout ce qui est entre [CROCHETS] est à compléter par toi.
+# Rien n'est inventé : si une info manque, elle reste en crochets.
+# ============================================================
+
+metadata:
+  language: "fr"
+  location: "Paris, France"
+  reference_date: "2026-11-04"
+  portfolio_type: "Portfolio professionnel personnel"
+  experience_level: "Reconversion : expérience en projet digital, product building en développement"
+
+# ============================================================
+# 01. IDENTITÉ
+# ============================================================
+
+identity:
+  first_name: "Anaïs"
+  last_name: "DAMIAO"
+  display_name: "Anaïs DAMIAO"
+  initials: "AD"
+
+  title: "Product Builder · IA & No-code"
+  location: "Paris, France"
+  mobility: "[PARIS / ÎLE-DE-FRANCE / FRANCE / EUROPE]"
+
+  professional_status:
+    availability: "Disponible"   # [À CONFIRMER : date de début possible]
+    opportunities:
+      - "CDI"
+      - "Freelance"
+      - "[CDD / ALTERNANCE : à garder ou supprimer]"
+    working_modes:
+      - "Sur site"
+      - "Hybride"
+
+  contact:
+    email: "damiao.anais@hotmail.fr"
+    linkedin: "[URL LINKEDIN]"
+    github: "https://github.com/damiaoanais"
+    portfolio: "https://portfolio-exercice-test.netlify.app/"
+    cv: "[URL CV]"
+
+# ============================================================
+# 02. POSITIONNEMENT
+# ============================================================
+
+positioning:
+  category: "Product Building"
+
+  # Brouillon de proposition de valeur : à reformuler avec tes mots
+  headline: "Je transforme des idées en produits digitaux avec l'IA et le no-code."
+
+  short_description: >-
+    Product Builder basée à Paris, je conçois, construis et teste
+    des produits digitaux en combinant réflexion produit,
+    no-code et intelligence artificielle.
+
+  extended_description: >-
+    Je pars d'un besoin, j'explore les solutions possibles,
+    puis je construis une première version utilisable avec
+    des outils d'IA et de no-code. Mon expérience en gestion
+    de projet digital m'aide à cadrer, prioriser et mener
+    un produit jusqu'à une version testable.
+
+  signature:
+    primary: "Comprendre. Construire. Tester. Améliorer."
+
+  value_proposition:
+    headline: "De l'idée à un produit testable."
+    description: >-
+      Je relie compréhension des besoins, prototypage
+      no-code et IA pour transformer une idée
+      en solution concrète.
+
+  differentiators:
+    - title: "Product mindset"
+      description: >-
+        Comprendre le problème et les utilisateurs
+        avant de choisir une solution.
+
+    - title: "Construction no-code et IA"
+      description: >-
+        Prototyper vite des interfaces, des fonctionnalités
+        et des automatisations, en vérifiant les résultats.
+
+    - title: "Pilotage de projet digital"
+      description: >-
+        Cadrer, planifier et coordonner un projet
+        avec plusieurs interlocuteurs.
+
+    - title: "Apprentissage en construisant"
+      description: >-
+        Tester, documenter et améliorer mes projets
+        version après version.
+
+  principles:
+    - "Comprendre avant de construire."
+    - "Faire simple avant de faire complexe."
+    - "Tester plutôt que supposer."
+    - "Documenter les décisions."
+    - "Reconnaître mes limites."
+
+# ============================================================
+# 03. NAVIGATION
+# ============================================================
+
+navigation:
+  primary:
+    - { label: "Accueil", href: "#accueil" }
+    - { label: "Projets", href: "#projets" }   # la flèche sous les billets mène à projets.html
+    - { label: "Compétences", href: "#competences" }
+    - { label: "Parcours", href: "#parcours" }
+    - { label: "Contact", href: "#contact" }
+  secondary:
+    - { label: "LinkedIn", href: "[URL LINKEDIN]" }
+    - { label: "Télécharger mon CV", href: "[URL CV]" }
+
+# ============================================================
+# 04. ACCUEIL — HERO
+# ============================================================
+
+home:
+  hero:
+    eyebrow: "PRODUCT BUILDER · IA & NO-CODE · PARIS"
+    headline: "Embarquement immédiat pour vos idées : je les mène jusqu'au produit digital."   # thème hôtesse de l'air
+    subheadline: >-
+      De la compréhension du besoin au prototype fonctionnel,
+      j'associe réflexion produit, no-code et intelligence
+      artificielle.
+    availability:
+      label: "Disponible"
+      description: >-
+        À la recherche d'une opportunité pour contribuer
+        à des produits concrets au sein d'une équipe.
+    location: "Basée à Paris · [OUVERTE À : FRANCE / EUROPE]"
+    primary_cta: { label: "Découvrir mes projets", href: "#projets" }
+    secondary_cta: { label: "Me contacter", href: "#contact" }
+
+  introduction:
+    eyebrow: "CE QUE JE FAIS"
+    headline: "Comprendre, construire, améliorer."
+    description: >-
+      Je m'intéresse à toute la vie d'un produit :
+      repérer un besoin, imaginer une solution,
+      réaliser une première version, la tester
+      et l'améliorer.
+
+  selected_work:
+    eyebrow: "PROJETS SÉLECTIONNÉS"
+    headline: "Des projets concrets, avec leur statut réel."
+    introduction: >-
+      Chaque projet indique clairement s'il s'agit d'un concept,
+      d'un prototype ou d'un produit en ligne.
+    items:
+      - { project_id: "project-01", featured: true }
+      - { project_id: "project-02", featured: true }
+      - { project_id: "project-03", featured: false }
+
+  capabilities:
+    eyebrow: "MON APPROCHE"
+    headline: "De l'idée à la première version."
+    pillars:
+      - id: "understand"
+        title: "01. Comprendre"
+        description: "Identifier le besoin, les utilisateurs et les contraintes."
+        activities:
+          - "Cadrage de projet"
+          - "Formulation d'hypothèses"
+          - "[AUTRE ACTIVITÉ RÉELLE]"
+      - id: "design"
+        title: "02. Concevoir"
+        description: "Transformer le besoin en parcours et fonctionnalités testables."
+        activities:
+          - "Parcours utilisateur"
+          - "Maquettes"
+          - "[AUTRE ACTIVITÉ RÉELLE]"
+      - id: "build"
+        title: "03. Construire"
+        description: "Réaliser une solution fonctionnelle avec des outils adaptés."
+        activities:
+          - "Prototypage no-code"
+          - "Développement assisté par IA"
+          - "Automatisation de workflows"
+      - id: "improve"
+        title: "04. Améliorer"
+        description: "Tester, corriger et itérer."
+        activities:
+          - "Tests fonctionnels"
+          - "Documentation"
+          - "[AUTRE ACTIVITÉ RÉELLE]"
+
+  ai_section:
+    eyebrow: "IA & PRODUCT BUILDING"
+    headline: "L'IA accélère la construction. Elle ne remplace pas le jugement."
+    description: >-
+      J'utilise l'IA pour explorer des idées, prototyper
+      et automatiser. Je reste responsable du besoin,
+      des décisions et de la vérification des résultats.
+    statement: "Assisté par l'IA. Validé par un humain."
+
+  final_cta:
+    eyebrow: "ET MAINTENANT ?"
+    headline: "Construisons quelque chose d'utile."
+    description: >-
+      Je cherche une équipe où contribuer à des produits concrets
+      et continuer à progresser.
+    primary_cta: { label: "Me contacter", href: "#contact" }
+    secondary_cta: { label: "Consulter mon CV", href: "[URL CV]" }
+
+# ============================================================
+# 05. PROJETS
+# ============================================================
+# IMPORTANT : choisis le statut honnête de chaque projet
+# (Concept / Prototype / MVP / Produit en ligne).
+# Ne publie que ce que tu peux montrer ou expliquer.
+
+projects_page:
+  hero:
+    eyebrow: "PROJETS"
+    headline: "Construire pour apprendre. Apprendre pour construire."
+  project_status_labels:
+    idea: "Concept"
+    prototype: "Prototype"
+    mvp: "MVP"
+    live: "Produit en ligne"
+
+projects:
+  # Landing : 2 billets maximum. Les autres sont sur projets.html.
+  # Sur le site, chaque billet = description courte à gauche + « Projet N » et titre à droite.
+  # La pastille de statut n'est plus affichée.
+  - id: "project-01"
+    title: "Newsletter de veille sectorielle par IA"
+    type: "Projet personnel"
+    status: "Concept"   # non affiché sur le billet
+    year: 2026
+    role: "Conception du produit"
+    summary: >-
+      Une newsletter générée par IA pour suivre l'actualité et les innovations
+      d'un secteur. Je vérifie d'abord si une offre similaire existe avant
+      de construire une première version.
+    evidence: "[LIEN, CAPTURE, DÉMO OU REPO]"
+    learning: "[CE QUE TU AS APPRIS]"
+
+  # EXEMPLE FICTIF : à remplacer par un vrai projet avant de partager le lien.
+  - id: "project-02"
+    title: "Assistant de réservation no-code"
+    type: "Exemple fictif"
+    status: "Exemple"
+    summary: >-
+      Exemple fictif. Un assistant qui répond aux clients et prend les réservations
+      d'un petit restaurant, construit avec des outils no-code et un modèle d'IA.
+
+  # SpotMate : projet confidentiel, volontairement retiré du site.
+
+  - id: "project-03"
+    title: "[TROISIÈME PROJET : OPTIONNEL]"
+    subtitle: "[PROMESSE EN UNE PHRASE]"
+    type: "[Projet personnel / professionnel]"
+    status: "[STATUT RÉEL]"
+    role: "[TON RÔLE EXACT]"
+    summary: "[50 à 80 mots]"
+    evidence: "[PREUVE VÉRIFIABLE]"
+
+# ============================================================
+# 06. COMPÉTENCES
+# ============================================================
+# Niveaux possibles : INITIATION / PRATIQUE / AUTONOME
+
+skills_page:
+  hero:
+    eyebrow: "COMPÉTENCES"
+    headline: "Des compétences au service du produit."
+  categories:
+    - id: "product"
+      title: "Product thinking"
+      skills:
+        - { name: "Cadrage du problème", level: "[NIVEAU]", evidence: "[PROJET]" }
+        - { name: "Priorisation et MVP", level: "[NIVEAU]", evidence: "[PROJET]" }
+        - { name: "Parcours utilisateur", level: "[NIVEAU]", evidence: "[PROJET]" }
+    - id: "build"
+      title: "No-code & IA"
+      skills:
+        - { name: "Prototypage no-code", level: "[NIVEAU]", evidence: "[PROJET]" }
+        - { name: "Développement assisté par IA", level: "[NIVEAU]", evidence: "[PROJET]" }
+        - { name: "Automatisation de workflows", level: "[NIVEAU]", evidence: "[PROJET]" }
+        - { name: "Prompts structurés", level: "[NIVEAU]", evidence: "[PROJET]" }
+    - id: "project"
+      title: "Gestion de projet digital"
+      skills:
+        - { name: "Cadrage et pilotage de projet", level: "[NIVEAU]", evidence: "Expérience chez ATLANTIC" }
+        - { name: "Coordination d'équipes", level: "[NIVEAU]", evidence: "[PREUVE]" }
+    - id: "quality"
+      title: "Qualité & mise en ligne"
+      skills:
+        - { name: "Tests fonctionnels", level: "[NIVEAU]", evidence: "[PROJET]" }
+        - { name: "Déploiement (GitHub, Netlify)", level: "[NIVEAU]", evidence: "Ce portfolio" }
+        - { name: "Documentation", level: "[NIVEAU]", evidence: "[PROJET]" }
+  tools:
+    introduction: "Uniquement les outils que j'ai réellement utilisés."
+    list: ["Claude", "[OUTIL NO-CODE]", "[OUTIL 3]"]
+  skills_disclaimer: >-
+    Je distingue ce que j'ai découvert, ce que j'ai utilisé
+    dans un projet et ce que je maîtrise de façon autonome.
+
+# ============================================================
+# 07. PARCOURS
+# ============================================================
+
+about_page:
+  hero:
+    eyebrow: "PARCOURS"
+    headline: "Curieuse de comprendre. Motivée pour construire."
+    introduction: >-
+      Je suis Anaïs, Product Builder basée à Paris. J'ai un parcours
+      en gestion de projet digital et je construis aujourd'hui
+      des produits avec l'IA et le no-code.
+
+  story:
+    background: >-
+      [À écrire : ton parcours en 3 à 5 phrases, avec tes mots.]
+    turning_point: >-
+      [À écrire : ce qui t'a donné envie de construire des produits.]
+    current_focus: >-
+      Je développe mes compétences à travers des projets personnels
+      mêlant conception produit, no-code et IA.
+    ambition: >-
+      Rejoindre une équipe où contribuer concrètement
+      à des produits réels, et continuer à progresser.
+
+  experience:
+    - organization: "ATLANTIC"
+      role: "Cheffe de Projet Digital"
+      dates: "2024 – 2026"
+      type: "Emploi (CDI)"
+      contributions:
+        - "[CONTRIBUTION VÉRIFIABLE 1]"
+        - "[CONTRIBUTION VÉRIFIABLE 2]"
+    - organization: "Valtech"
+      role: "[RÔLE]"
+      dates: "[DATES]"
+      type: "[TYPE]"
+      contributions:
+        - "[CONTRIBUTION VÉRIFIABLE]"
+
+  education:
+    - institution: "[ÉTABLISSEMENT]"
+      program: "[FORMATION]"
+      dates: "[DATES]"
+      status: "[TERMINÉE / EN COURS]"
+
+  languages:
+    - { language: "Français", level: "[NIVEAU]" }
+    - { language: "Anglais", level: "[NIVEAU]" }
+
+  interests:
+    - "[CENTRE D'INTÉRÊT AUTHENTIQUE]"
+    - "[CENTRE D'INTÉRÊT AUTHENTIQUE]"
+
+  values:
+    - { title: "Curiosité", description: "Chercher à comprendre avant de juger." }
+    - { title: "Clarté", description: "Expliquer simplement les sujets complexes." }
+    - { title: "Rigueur", description: "Tester, vérifier, documenter." }
+    - { title: "Progression", description: "Transformer chaque difficulté en apprentissage." }
+
+# ============================================================
+# 08. CONTACT
+# ============================================================
+
+contact_page:
+  hero:
+    eyebrow: "CONTACT"
+    headline: "Un projet, une opportunité, une conversation ?"
+    description: >-
+      Je suis ouverte aux échanges avec les équipes produit,
+      tech et digital qui construisent des solutions utiles.
+  opportunities:
+    headline: "Ce que je recherche"
+    items:
+      - "Un poste de Product Builder ou à la croisée du produit, de l'IA et du no-code."
+      - "Une équipe qui partage ses connaissances."
+      - "Des problèmes concrets à résoudre."
+  primary_contact:
+    label: "M'envoyer un email"
+    email: "damiao.anais@hotmail.fr"
+  social_links:
+    - { label: "LinkedIn", href: "[URL LINKEDIN]" }
+    - { label: "GitHub", href: "[URL GITHUB]" }
+  location: { city: "Paris", country: "France" }
+  form:
+    enabled: false   # Mettre à true seulement si un service de formulaire est branché
+
+# ============================================================
+# 09. FOOTER & SEO
+# ============================================================
+
+footer:
+  signature: "Anaïs DAMIAO"
+  statement: "Comprendre les problèmes. Construire des choses utiles."
+  location: "Paris, France"
+  copyright: "© 2026 Anaïs DAMIAO"
+
+seo:
+  site_name: "Anaïs DAMIAO — Product Builder"
+  default_title: "Anaïs DAMIAO | Product Builder IA & No-code — Paris"
+  default_description: >-
+    Portfolio d'Anaïs DAMIAO, Product Builder à Paris.
+    Projets de conception produit, no-code et IA.
+  locale: "fr_FR"
+  site_url: "https://portfolio-exercice-test.netlify.app/"
+
+# ============================================================
+# RÈGLES D'AUTHENTICITÉ (critères de l'exercice)
+# ============================================================
+# - Aucun client, résultat ou chiffre inventé.
+# - Statut exact de chaque projet (concept ≠ produit en ligne).
+# - Rôle personnel explicite dans chaque projet.
+# - Chaque compétence importante reliée à une preuve.
