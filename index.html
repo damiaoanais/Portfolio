@@ -139,7 +139,7 @@
 
 
     /* Projet en billet (ticket) */
-    .ticket { --stub: 260px; --notch: 36px; height: 352px; position: relative; display: grid; grid-template-columns: 1fr var(--stub); background: #171717; border: 1px solid var(--hairline-strong); border-radius: 22px; transition: transform .3s cubic-bezier(.2,.7,.2,1), border-color .3s; }
+    .ticket { --stub: 260px; --notch: 36px; height: 240px; position: relative; display: grid; grid-template-columns: 1fr var(--stub); background: #171717; border: 1px solid var(--hairline-strong); border-radius: 22px; transition: transform .3s cubic-bezier(.2,.7,.2,1), border-color .3s; }
     .ticket:hover { transform: translateY(-4px); border-color: var(--primary); }
     .ticket::before, .ticket::after { content: ""; position: absolute; right: var(--stub); width: var(--notch); height: var(--notch); background: var(--canvas); border: 1px solid var(--hairline-strong); border-radius: 50%; transform: translateX(50%); z-index: 1; transition: border-color .3s; }
     .ticket::before { top: calc(var(--notch) / -2); clip-path: inset(50% 0 0 0); }
@@ -154,7 +154,7 @@
     .ticket-flow strong { display: block; font-family: var(--display); font-size: 18px; line-height: 1.25; color: var(--ink); font-weight: 700; }
     .ticket-flow .s { display: block; font-size: 14px; color: var(--muted); margin-top: 4px; }
     .ticket-flow .arrow { color: var(--ink); font-size: 20px; padding-top: 24px; }
-    .ticket-desc { font-size: 15px; line-height: 1.5; max-width: 560px; margin-top: auto; }
+    .ticket-desc { font-size: 15px; line-height: 1.5; max-width: 560px; margin-top: 0; }
     .ticket-stub { border-left: 1px solid var(--hairline-strong); padding: 24px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px; }
     .ticket-stub .k { margin: 0; }
     .ticket-stub .big { font-family: var(--display); font-weight: 800; font-size: 34px; line-height: 1.1; color: var(--ink); letter-spacing: -0.02em; }
@@ -170,7 +170,6 @@
       .ticket-flow { grid-template-columns: 1fr; gap: 12px; }
       .ticket-flow .arrow { padding: 0; transform: rotate(90deg); justify-self: start; }
       .ticket-flow strong { white-space: normal; }
-      .ticket-desc { margin-top: 4px; font-size: 16px; }
     }
 
     /* AI band */
@@ -336,12 +335,7 @@
                 <h3>Newsletter de veille sectorielle par IA</h3>
                 <span class="tk-pill">Projet 1</span>
               </div>
-              <div class="ticket-flow">
-                <div><span class="k">Le besoin</span><strong>Suivre son secteur</strong><span class="s">sans y passer des heures</span></div>
-                <span class="arrow" aria-hidden="true">&rarr;</span>
-                <div><span class="k">La solution</span><strong>Newsletter par IA</strong><span class="s">selon les critères de l'entreprise</span></div>
-              </div>
-              <p class="ticket-desc">Une veille sur l'actualité et les innovations d'un secteur, pas sur les concurrents. Je vérifie d'abord si une offre similaire existe avant de construire une première version.</p>
+              <p class="ticket-desc">Une newsletter générée par IA pour suivre l'actualité et les innovations d'un secteur. Je vérifie d'abord si une offre similaire existe avant de construire une première version.</p>
             </div>
             <div class="ticket-stub">
               <span class="k">Statut</span>
