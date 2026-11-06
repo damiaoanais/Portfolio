@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
   <script>document.documentElement.classList.add('js')</script>
-  <title>Siana D. | Product Builder IA & No-code — Paris</title>
-  <meta name="description" content="Portfolio de Siana D., Product Builder à Paris. Projets de conception produit, no-code et IA.">
-  <meta property="og:title" content="Siana D. — Product Builder IA & No-code">
+  <title>Anaïs DAMIAO | Product Builder IA & No-code — Paris</title>
+  <meta name="description" content="Portfolio de Anaïs DAMIAO, Product Builder à Paris. Projets de conception produit, no-code et IA.">
+  <meta property="og:title" content="Anaïs DAMIAO — Product Builder IA & No-code">
   <meta property="og:description" content="Product builder IA &amp; no-code : j'embarque vos idées et je les fais atterrir en produits digitaux.">
   <meta property="og:locale" content="fr_FR">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,6 +64,20 @@
     .links a.active { color: var(--primary); }
     .links a.active::after { width: 100%; }
     .links a:hover::after { width: 100%; }
+
+
+    /* Panneau d'affichage de vol (split-flap) */
+    .board { display: inline-flex; align-items: center; gap: 3px; font-family: "Courier New", ui-monospace, Menlo, monospace; }
+    .board .t { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 30px; background: #141414; border: 1px solid var(--hairline-strong); border-radius: 3px; font-weight: 700; font-size: 17px; line-height: 1; color: var(--ink); overflow: hidden; }
+    .board .t::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: #000; opacity: .9; }
+    .board .t.fl { color: var(--primary); animation: flip .11s ease-in-out; }
+    .board .sp { width: 10px; }
+    .board.done .t { color: var(--ink); }
+    @keyframes flip { 0% { transform: scaleY(1); } 50% { transform: scaleY(.15); } 100% { transform: scaleY(1); } }
+    @media (max-width: 640px) { .board .t { width: 15px; height: 24px; font-size: 13px; } .board { gap: 2px; } .board .sp { width: 6px; } }
+    @media (max-width: 380px) { .board .t { width: 13px; } .board .sp { width: 4px; } }
+    .btn { white-space: nowrap; }
+    @media (max-width: 640px) { nav .btn { padding: 0 14px; font-size: 14px; height: 40px; } }
 
     /* Buttons */
     .btn { display: inline-flex; align-items: center; justify-content: center; height: 46px; padding: 0 24px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: background .2s, transform .2s, box-shadow .2s, border-color .2s; }
@@ -220,7 +234,7 @@
   <header>
     <div class="wrap">
       <nav aria-label="Navigation principale">
-        <a class="brand" href="#accueil">Siana D<span>.</span></a>
+        <a class="brand" href="#accueil" aria-label="Anaïs DAMIAO, retour à l'accueil"><span class="board" id="board" data-text="ANAÏS DAMIAO" aria-hidden="true">Anaïs DAMIAO</span></a>
         <ul class="links">
           <li><a href="#projets">Projets</a></li>
           <li><a href="#competences">Compétences</a></li>
@@ -236,7 +250,7 @@
     <div class="stage">
     <div class="rail">
       <div class="rail-sticky">
-        <img src="siana-cutout.webp" width="760" height="1748" alt="Portrait de Siana D., en tailleur rose, regardant par-dessus l'épaule">
+        <img src="siana-cutout.webp" width="760" height="1748" alt="Portrait de Anaïs DAMIAO, en tailleur rose, regardant par-dessus l'épaule">
       </div>
     </div>
     <!-- HERO -->
@@ -255,7 +269,7 @@
           <span class="tag">Sur site ou hybride</span>
           <span class="tag">CDI · Freelance</span>
         </div>
-        <img class="hero-figure" src="siana-cutout.webp" width="760" height="1748" alt="Portrait de Siana D., en tailleur rose, regardant par-dessus l'épaule">
+        <img class="hero-figure" src="siana-cutout.webp" width="760" height="1748" alt="Portrait de Anaïs DAMIAO, en tailleur rose, regardant par-dessus l'épaule">
       </div>
     </section>
 
@@ -393,10 +407,10 @@
 
   <footer>
     <div class="wrap foot">
-      <div><strong>Siana D.</strong><br>Comprendre le problème. Construire ce qui compte. · Paris, France</div>
+      <div><strong>Anaïs DAMIAO</strong><br>Comprendre le problème. Construire ce qui compte. · Paris, France</div>
       <div>
         <a href="#projets">Projets</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a>
-        <p style="margin-top: 8px;">© 2026 Siana D.</p>
+        <p style="margin-top: 8px;">© 2026 Anaïs DAMIAO</p>
       </div>
     </div>
   </footer>
@@ -472,6 +486,47 @@
       window.addEventListener('scroll', req, { passive: true });
       window.addEventListener('resize', req);
       update();
+    })();
+  </script>
+  <script>
+    (function () {
+      var el = document.getElementById('board');
+      if (!el) { return; }
+      var text = el.getAttribute('data-text');
+      var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÏ0123456789';
+      var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      el.textContent = '';
+      var tiles = [];
+      for (var i = 0; i < text.length; i++) {
+        var ch = text.charAt(i), sp = document.createElement('span');
+        if (ch === ' ') { sp.className = 'sp'; el.appendChild(sp); continue; }
+        sp.className = 't'; sp.textContent = ch; el.appendChild(sp);
+        tiles.push({ node: sp, target: ch });
+      }
+      var running = false;
+      function run() {
+        if (still || running) { return; }
+        running = true; el.classList.remove('done');
+        var left = tiles.length;
+        tiles.forEach(function (t, idx) {
+          var flips = 7 + idx * 2, n = 0;
+          t.node.textContent = ' ';
+          setTimeout(function tick() {
+            n++;
+            t.node.classList.remove('fl'); void t.node.offsetWidth; t.node.classList.add('fl');
+            if (n >= flips) {
+              t.node.textContent = t.target;
+              setTimeout(function () { t.node.classList.remove('fl'); if (--left === 0) { el.classList.add('done'); running = false; } }, 130);
+              return;
+            }
+            t.node.textContent = chars.charAt(Math.floor(Math.random() * chars.length));
+            setTimeout(tick, 70);
+          }, 150 + idx * 40);
+        });
+      }
+      run();
+      el.parentNode.addEventListener('mouseenter', run);
+      el.parentNode.addEventListener('focus', run);
     })();
   </script>
 </body>
