@@ -1,0 +1,4 @@
+Dépose ici les logos officiels des outils (téléchargés sur le site de chaque outil, rubrique "press kit" ou "brand").
+Noms attendus (svg, png ou webp) : claude, make, n8n, airtable, bubble, softr, cursor, lovable, react
+Exemple : logos/claude.svg
+Le site les affiche automatiquement à la place des initiales.

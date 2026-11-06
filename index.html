@@ -181,6 +181,8 @@
     .marquee:hover .track { animation-play-state: paused; }
     .tool { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; font-family: var(--display); font-weight: 700; font-size: 18px; color: var(--ink); border: 1px solid var(--hairline-strong); border-radius: 9999px; padding: 8px 20px 8px 10px; background: var(--card); }
     .tool i { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--primary); color: var(--primary); font-style: normal; font-size: 14px; font-weight: 800; }
+    .tool i.logo { border: 0; width: 28px; height: 28px; }
+    .tool i.logo img { display: block; max-width: 28px; max-height: 28px; object-fit: contain; }
     @keyframes scroll-x { to { transform: translateX(-100%); } }
     @media (prefers-reduced-motion: reduce) { .marquee { overflow-x: auto; } .track { animation: none; } .track[aria-hidden="true"] { display: none; } }
 
@@ -412,8 +414,8 @@
         <div class="tools">
           <p class="tools-title">Outils explorés</p>
           <div class="marquee" aria-label="Outils explorés : Claude, Make, n8n, Airtable, Bubble, Softr, Cursor, Lovable, React">
-            <ul class="track"><li class="tool"><i aria-hidden="true">C</i>Claude</li><li class="tool"><i aria-hidden="true">M</i>Make</li><li class="tool"><i aria-hidden="true">N</i>n8n</li><li class="tool"><i aria-hidden="true">A</i>Airtable</li><li class="tool"><i aria-hidden="true">B</i>Bubble</li><li class="tool"><i aria-hidden="true">S</i>Softr</li><li class="tool"><i aria-hidden="true">C</i>Cursor</li><li class="tool"><i aria-hidden="true">L</i>Lovable</li><li class="tool"><i aria-hidden="true">R</i>React</li></ul>
-            <ul class="track" aria-hidden="true"><li class="tool"><i aria-hidden="true">C</i>Claude</li><li class="tool"><i aria-hidden="true">M</i>Make</li><li class="tool"><i aria-hidden="true">N</i>n8n</li><li class="tool"><i aria-hidden="true">A</i>Airtable</li><li class="tool"><i aria-hidden="true">B</i>Bubble</li><li class="tool"><i aria-hidden="true">S</i>Softr</li><li class="tool"><i aria-hidden="true">C</i>Cursor</li><li class="tool"><i aria-hidden="true">L</i>Lovable</li><li class="tool"><i aria-hidden="true">R</i>React</li></ul>
+            <ul class="track"><li class="tool" data-logo="claude"><i aria-hidden="true">C</i>Claude</li><li class="tool" data-logo="make"><i aria-hidden="true">M</i>Make</li><li class="tool" data-logo="n8n"><i aria-hidden="true">N</i>n8n</li><li class="tool" data-logo="airtable"><i aria-hidden="true">A</i>Airtable</li><li class="tool" data-logo="bubble"><i aria-hidden="true">B</i>Bubble</li><li class="tool" data-logo="softr"><i aria-hidden="true">S</i>Softr</li><li class="tool" data-logo="cursor"><i aria-hidden="true">C</i>Cursor</li><li class="tool" data-logo="lovable"><i aria-hidden="true">L</i>Lovable</li><li class="tool" data-logo="react"><i aria-hidden="true">R</i>React</li></ul>
+            <ul class="track" aria-hidden="true"><li class="tool" data-logo="claude"><i aria-hidden="true">C</i>Claude</li><li class="tool" data-logo="make"><i aria-hidden="true">M</i>Make</li><li class="tool" data-logo="n8n"><i aria-hidden="true">N</i>n8n</li><li class="tool" data-logo="airtable"><i aria-hidden="true">A</i>Airtable</li><li class="tool" data-logo="bubble"><i aria-hidden="true">B</i>Bubble</li><li class="tool" data-logo="softr"><i aria-hidden="true">S</i>Softr</li><li class="tool" data-logo="cursor"><i aria-hidden="true">C</i>Cursor</li><li class="tool" data-logo="lovable"><i aria-hidden="true">L</i>Lovable</li><li class="tool" data-logo="react"><i aria-hidden="true">R</i>React</li></ul>
           </div>
         </div>
       </div>
@@ -540,6 +542,23 @@
       window.addEventListener('scroll', req, { passive: true });
       window.addEventListener('resize', req);
       update();
+    })();
+  </script>
+  <script>
+    (function () {
+      var exts = ['svg', 'png', 'webp'];
+      document.querySelectorAll('.tool[data-logo]').forEach(function (li) {
+        var name = li.getAttribute('data-logo'), icon = li.querySelector('i'), k = 0;
+        function next() {
+          if (k >= exts.length) { return; }
+          var img = new Image();
+          img.alt = '';
+          img.onload = function () { icon.textContent = ''; icon.className = 'logo'; icon.appendChild(img); };
+          img.onerror = function () { k++; next(); };
+          img.src = 'logos/' + name + '.' + exts[k];
+        }
+        next();
+      });
     })();
   </script>
 </body>
