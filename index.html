@@ -158,9 +158,9 @@
     }
 
     .go-all { display: flex; flex-direction: column; align-items: center; gap: 10px; margin: 28px auto 0; width: max-content; max-width: 100%; text-decoration: none; }
-    .go-circle { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; border: 1.5px solid var(--primary); color: var(--primary); font-size: 22px; line-height: 1; transition: background .25s, color .25s, transform .25s; }
+    .go-circle { display: block; color: var(--primary); font-size: 40px; line-height: 1; transition: transform .25s; }
     .go-label { font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); transition: color .25s; }
-    .go-all:hover .go-circle, .go-all:focus-visible .go-circle { background: var(--primary); color: var(--on-primary); transform: translateX(6px); }
+    .go-all:hover .go-circle, .go-all:focus-visible .go-circle { transform: translateX(8px); }
     .go-all:hover .go-label { color: var(--ink); }
     @media (prefers-reduced-motion: no-preference) { .go-circle { animation: nudge 2.4s ease-in-out infinite; } .go-all:hover .go-circle { animation: none; } }
     @keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
