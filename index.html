@@ -138,7 +138,7 @@
 
 
     /* Projet en billet (ticket) */
-    .ticket { --stub: 280px; --r: 10px; height: 220px; position: relative; display: grid; grid-template-columns: 1fr var(--stub); background: #171717; border: 1px solid #2c2c2c; border-radius: 24px; transition: transform .3s cubic-bezier(.2,.7,.2,1), background .3s; -webkit-mask: radial-gradient(circle var(--r) at calc(100% - var(--stub)) 0, #0000 calc(var(--r) - .5px), #000 var(--r)), radial-gradient(circle var(--r) at calc(100% - var(--stub)) 100%, #0000 calc(var(--r) - .5px), #000 var(--r)); -webkit-mask-composite: source-in; mask: radial-gradient(circle var(--r) at calc(100% - var(--stub)) 0, #0000 calc(var(--r) - .5px), #000 var(--r)), radial-gradient(circle var(--r) at calc(100% - var(--stub)) 100%, #0000 calc(var(--r) - .5px), #000 var(--r)); mask-composite: intersect; }
+    .ticket { --stub: 280px; --r: 10px; height: 190px; position: relative; display: grid; grid-template-columns: 1fr var(--stub); background: #171717; border: 1px solid #2c2c2c; border-radius: 24px; transition: transform .3s cubic-bezier(.2,.7,.2,1), background .3s; -webkit-mask: radial-gradient(circle var(--r) at calc(100% - var(--stub)) 0, #0000 calc(var(--r) - .5px), #000 var(--r)), radial-gradient(circle var(--r) at calc(100% - var(--stub)) 100%, #0000 calc(var(--r) - .5px), #000 var(--r)); -webkit-mask-composite: source-in; mask: radial-gradient(circle var(--r) at calc(100% - var(--stub)) 0, #0000 calc(var(--r) - .5px), #000 var(--r)), radial-gradient(circle var(--r) at calc(100% - var(--stub)) 100%, #0000 calc(var(--r) - .5px), #000 var(--r)); mask-composite: intersect; }
     .ticket:hover { transform: translateY(-4px); background: #1c1c1c; }
     .ticket-main { padding: 28px 32px; display: flex; align-items: center; min-width: 0; }
     .ticket-desc { font-size: 16px; line-height: 1.55; max-width: 520px; }
@@ -337,13 +337,13 @@
     </section>
 
     <!-- PROJETS -->
-    <section id="projets">
+    <section id="projets" style="padding: 16px 0 24px; scroll-margin-top: -8px;">
       <div class="wrap">
         <p class="eyebrow">Projets</p>
         <h2>Des idées sérieuses. <span class="hl">Des statuts honnêtes.</span></h2>
         <p class="lead">Chaque projet affiche son vrai niveau d'avancement : concept, prototype ou produit en ligne. L'exigence commence par là.</p>
         <!-- Landing : 2 projets maximum. Les autres sont sur projets.html -->
-        <div class="grid" style="margin-top: 40px; grid-template-columns: 1fr;">
+        <div class="grid" style="margin-top: 28px; grid-template-columns: 1fr;">
           <article class="ticket">
             <div class="ticket-main">
               <p class="ticket-desc">Une newsletter générée par IA pour suivre l'actualité et les innovations d'un secteur. Je vérifie d'abord si une offre similaire existe avant de construire une première version.</p>
