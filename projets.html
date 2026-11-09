@@ -2,8 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#000000">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Anaïs DAMIAO">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <script>document.documentElement.classList.add('js')</script>
   <title>Projets — Anaïs DAMIAO</title>
   <meta name="description" content="Tous les projets d\'Anaïs DAMIAO, product builder IA &amp; no-code.">
@@ -215,6 +220,22 @@
     .js .reveal.in { opacity: 1; transform: none; }
     .js .card.reveal.in { transition: opacity .8s cubic-bezier(.2,.7,.2,1) var(--d, 0s), transform .3s cubic-bezier(.2,.7,.2,1), border-color .3s, box-shadow .3s; }
 
+    /* Tab bar mobile (PWA) */
+    .tabbar { display: none; }
+    @media (max-width: 767px) {
+      body { padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
+      header { padding-top: env(safe-area-inset-top); }
+      nav { height: 56px; }
+      header nav .btn { display: none; }
+      .brand { font-size: 18px; }
+      html { scroll-padding-top: 57px; }
+      .tabbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; justify-content: space-around; padding: 8px 4px calc(8px + env(safe-area-inset-bottom)); background: rgba(8,8,8,.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-top: 1px solid var(--hairline); }
+      .tabbar a { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; text-decoration: none; color: var(--muted); font-size: 10.5px; font-weight: 500; letter-spacing: .1px; border-radius: 12px; -webkit-tap-highlight-color: transparent; }
+      .tabbar a.active { color: var(--primary); }
+      .tabbar a.active svg { stroke-width: 2; }
+      .lead { font-size: 16px; }
+    }
+
     @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 
     /* Responsive */
@@ -258,6 +279,14 @@
       </nav>
     </div>
   </header>
+
+  <nav class="tabbar" aria-label="Navigation mobile">
+    <a href="index.html#accueil"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Accueil</span></a>
+    <a href="projets.html" class="active" aria-current="page"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z"/><path d="M14 6v12" stroke-dasharray="2 3"/></svg><span>Projets</span></a>
+    <a href="index.html#competences"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg><span>Compétences</span></a>
+    <a href="index.html#parcours"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><span>Parcours</span></a>
+    <a href="index.html#contact"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Contact</span></a>
+  </nav>
 
   <main id="contenu">
     <section style="padding-top: 120px;">
@@ -317,5 +346,6 @@
       });
     })();
   </script>
+<script>if('serviceWorker' in navigator && location.protocol!=='file:'){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js');});}</script>
 </body>
 </html>
