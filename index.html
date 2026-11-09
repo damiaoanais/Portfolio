@@ -10,6 +10,12 @@
   <meta name="apple-mobile-web-app-title" content="Anaïs DAMIAO">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <script>document.documentElement.classList.add('js')</script>
+  <script>
+    // Toujours arriver sur l'accueil (pas de restauration du scroll au rechargement), sauf lien direct vers une section
+    if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+    window.addEventListener('pageshow', function () { if (!location.hash) { window.scrollTo(0, 0); } });
+  </script>
+
   <title>Anaïs DAMIAO | Product Builder IA & No-code — Paris</title>
   <meta name="description" content="Portfolio de Anaïs DAMIAO, Product Builder à Paris. Projets de conception produit, no-code et IA.">
   <meta property="og:title" content="Anaïs DAMIAO — Product Builder IA & No-code">
