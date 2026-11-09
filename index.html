@@ -38,11 +38,17 @@
       --text: Inter, system-ui, "Helvetica Neue", Arial, sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 65px; }
     body { background: var(--canvas); color: var(--body); font-family: var(--text); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
     a { color: inherit; }
     .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
     section { padding: 88px 0; position: relative; }
+    /* Panneaux ciblés par le menu : tiennent dans l'écran, contenu centré */
+    .panel { padding: 28px 0; min-height: calc(100vh - 65px); min-height: calc(100svh - 65px); display: flex; flex-direction: column; justify-content: center; }
+    .panel > .wrap { width: 100%; }
+    #parcours .who { font-size: clamp(20px, 2.2vw, 24px); margin: 22px 0 0; }
+    #parcours .timeline { margin-top: 24px; gap: 14px; }
+    #parcours .step { padding-bottom: 14px; }
     h1, h2, h3 { font-family: var(--display); color: var(--ink); font-weight: 800; letter-spacing: -0.02em; }
     .hl { color: var(--primary); }
     .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--primary); margin-bottom: 16px; }
@@ -174,7 +180,7 @@
     .more .btn:hover span { transform: translateX(5px); }
 
     /* Fil d'outils en boucle */
-    .tools { margin-top: 80px; }
+    .tools { margin-top: 64px; }
     .tools-title { font-size: 12px; font-weight: 600; letter-spacing: 0.9px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
     .marquee { display: flex; overflow: hidden; padding: 4px 0; }
     .track { flex: none; display: flex; gap: 14px; padding-right: 14px; margin: 0; list-style: none; animation: scroll-x 32s linear infinite; }
@@ -337,7 +343,7 @@
     </section>
 
     <!-- PROJETS -->
-    <section id="projets" style="padding: 16px 0 24px; scroll-margin-top: -8px;">
+    <section id="projets" class="panel">
       <div class="wrap">
         <p class="eyebrow">Projets</p>
         <h2>Des idées sérieuses. <span class="hl">Des statuts honnêtes.</span></h2>
@@ -380,7 +386,7 @@
     </section>
 
     <!-- COMPÉTENCES -->
-    <section id="competences" style="padding-bottom: 40px;">
+    <section id="competences" class="panel">
       <div class="wrap">
         <p class="eyebrow">Compétences</p>
         <h2>Ce que je sais faire. <span class="hl">Rien de plus, rien de moins.</span></h2>
@@ -422,7 +428,7 @@
     </section>
 
     <!-- PARCOURS -->
-    <section id="parcours" style="background: var(--canvas-soft); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);">
+    <section id="parcours" class="panel" style="background: var(--canvas-soft); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);">
       <div class="wrap">
         <p class="eyebrow">Parcours</p>
         <h2>Du pilotage de projet <span class="hl">au product building.</span></h2>
@@ -448,7 +454,7 @@
     </div><!-- /stage -->
 
     <!-- CONTACT -->
-    <section class="cta" id="contact">
+    <section class="cta panel" id="contact">
       <div class="wrap">
         <p class="eyebrow">Et maintenant ?</p>
         <h2>Vous construisez des produits exigeants ? <span class="hl">Parlons-en.</span></h2>
