@@ -245,14 +245,13 @@ projects:
     evidence: "[LIEN, CAPTURE, DÉMO OU REPO]"
     learning: "[CE QUE TU AS APPRIS]"
 
-  # EXEMPLE FICTIF : à remplacer par un vrai projet avant de partager le lien.
+  # Concept réel (rien de construit pour l'instant).
   - id: "project-02"
-    title: "Assistant de réservation no-code"
-    type: "Exemple fictif"
-    status: "Exemple"
+    title: "PWA de soins esthétiques"
+    type: "Concept"
+    status: "concept"
     summary: >-
-      Exemple fictif. Un assistant qui répond aux clients et prend les réservations
-      d'un petit restaurant, construit avec des outils no-code et un modèle d'IA.
+      Concept. Un utilisateur décrit son besoin, l'app (RAG) lui propose un ou plusieurs soins adaptés, puis une liste de médecins certifiés proches de lui qui les pratiquent. Né de deux problèmes : trouver un injecteur certifié, et choisir le bon soin.
 
   # SpotMate : projet confidentiel, volontairement retiré du site.
 
