@@ -76,7 +76,7 @@ Blog, pages détaillées par projet, agent IA, RAG, connecteurs, formulaire de c
 - Aucun chiffre, client ou résultat inventé.
 - Chaque projet affiche ce qu'il est vraiment.
 - SpotMate est confidentiel : volontairement absent du site.
-- **Le second billet (« PWA de soins esthétiques ») est un concept réel**, présenté comme tel (statut Concept, rien de construit). À compléter dès qu'une première version existe, avant tout partage du lien.
+- **Le second billet (« App de soins esthétiques ») est un concept réel**, présenté comme tel (statut Concept, rien de construit). À compléter dès qu'une première version existe, avant tout partage du lien.
 
 ## 10. Suivi des versions (principales étapes)
 
@@ -89,7 +89,7 @@ Blog, pages détaillées par projet, agent IA, RAG, connecteurs, formulaire de c
 
 ## 11. Points ouverts
 
-- [x] Second projet réel ajouté (concept PWA de soins esthétiques).
+- [x] Second projet réel ajouté (concept App de soins esthétiques).
 - [ ] URL LinkedIn et CV.
 - [ ] Statuts et détails réels des projets (preuves : lien, capture, repo).
 - [ ] Texte personnel « parcours » et niveaux de compétences à valider.

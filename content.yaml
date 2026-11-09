@@ -247,7 +247,7 @@ projects:
 
   # Concept réel (rien de construit pour l'instant).
   - id: "project-02"
-    title: "PWA de soins esthétiques"
+    title: "App de soins esthétiques"
     type: "Concept"
     status: "concept"
     summary: >-
