@@ -13,7 +13,14 @@
   <script>
     // Toujours arriver sur l'accueil (pas de restauration du scroll au rechargement), sauf lien direct vers une section
     if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
-    window.addEventListener('pageshow', function () { if (!location.hash) { window.scrollTo(0, 0); } });
+    (function () {
+      var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+      var reload = nav && nav.type === 'reload';
+      // Rechargement : on oublie l'ancre (#contact…) et on revient à l'accueil
+      if (reload && location.hash) { history.replaceState(null, '', location.pathname + location.search); }
+      window.addEventListener('pageshow', function () { if (!location.hash) { window.scrollTo(0, 0); } });
+      window.addEventListener('load', function () { if (!location.hash) { window.scrollTo(0, 0); } });
+    })();
   </script>
 
   <title>Anaïs DAMIAO | Product Builder IA & No-code — Paris</title>
