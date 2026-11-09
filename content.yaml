@@ -331,25 +331,31 @@ about_page:
       à des produits réels, et continuer à progresser.
 
   experience:
-    - organization: "ATLANTIC"
-      role: "Cheffe de Projet Digital"
-      dates: "2024 – 2026"
+    - organization: "Atlantic France"
+      role: "Cheffe de projet digital"
+      dates: "Mars 2024 – août 2026"
       type: "Emploi (CDI)"
       contributions:
         - "[CONTRIBUTION VÉRIFIABLE 1]"
         - "[CONTRIBUTION VÉRIFIABLE 2]"
     - organization: "Valtech"
-      role: "[RÔLE]"
-      dates: "[DATES]"
-      type: "[TYPE]"
+      role: "Data Project Manager & analytics"
+      dates: "Sept. 2018 – mai 2024"
+      type: "Emploi"
       contributions:
-        - "[CONTRIBUTION VÉRIFIABLE]"
+        - "Marché du luxe"
+    - organization: "Naturalia France"
+      role: "Ebusiness Project Manager"
+      dates: "Sept. 2016 – mars 2018"
+      type: "Emploi"
+      contributions:
+        - "Gestion du catalogue produits, SEA/SEO"
 
   education:
-    - institution: "[ÉTABLISSEMENT]"
-      program: "[FORMATION]"
-      dates: "[DATES]"
-      status: "[TERMINÉE / EN COURS]"
+    - institution: "Jedha"
+      program: "Product Builder IA No code Full stack (RNCP Bac+3/4)"
+      dates: "[DATE DE DÉBUT] – en cours"
+      status: "En cours"
 
   languages:
     - { language: "Français", level: "[NIVEAU]" }

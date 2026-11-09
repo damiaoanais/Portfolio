@@ -47,7 +47,7 @@ Accroche affichée sur le site : « **Embarquement immédiat** pour vos idées :
 | `projets.html` | Liste de tous les projets |
 | IA & product building | Phrase « Assisté par l'IA. Validé par un humain. » |
 | Compétences | 3 cartes, outils explorés |
-| Parcours | Jedha (en cours), ATLANTIC 2024–2026, Valtech |
+| Parcours | Jedha (en cours), Atlantic France 2024–2026, Valtech 2018–2024, Naturalia France 2016–2018 |
 | Contact | Email, GitHub |
 
 ### Exclu pour l'instant
