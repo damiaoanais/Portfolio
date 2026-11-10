@@ -5,7 +5,8 @@ const { pipeline, day } = require('./_redis');
 
 const KEEP = 60 * 60 * 24 * 400; // 400 jours
 const PAGES = ['/', '/index.html', '/projets.html', '/outils.html', '/competences.html'];
-const BOT = /bot|crawl|spider|slurp|headless|lighthouse|preview|monitor|curl|wget|python|node-fetch/i;
+const CLICKS = ['Me contacter (menu)', 'Me contacter (accueil)', 'E-mail', 'GitHub'];
+const BOT =/bot|crawl|spider|slurp|headless|lighthouse|preview|monitor|curl|wget|python|node-fetch/i;
 
 function device(ua, w) {
   if (/ipad|tablet|kindle|silk|playbook/i.test(ua) || (/android/i.test(ua) && !/mobile/i.test(ua))) return 'Tablette';
@@ -57,6 +58,15 @@ module.exports = async (req, res) => {
   let b = req.body;
   try { if (typeof b === 'string') b = JSON.parse(b); } catch (e) { b = null; }
   if (!b || typeof b !== 'object') { res.status(400).end(); return; }
+
+  // Clic sur un bouton ou lien de contact : compté à part, ne compte pas comme page vue.
+  if (b.e === 'click') {
+    if (!CLICKS.includes(b.k)) { res.status(400).end(); return; }
+    const d = day();
+    try { await pipeline([['HINCRBY', 'clk:' + d, b.k, 1], ['EXPIRE', 'clk:' + d, KEEP]]); res.status(204).end(); }
+    catch (e) { res.status(500).json({ error: 'stockage indisponible' }); }
+    return;
+  }
 
   let path = String(b.p || '/').split('?')[0];
   if (path === '/index.html') path = '/';

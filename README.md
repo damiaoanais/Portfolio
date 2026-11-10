@@ -14,7 +14,7 @@ Site statique (un seul fichier `index.html`), prêt à être déployé sur Netli
 
 - `track.js` (chargé sur les 4 pages) envoie chaque page vue à `api/collect.js`, une fonction Vercel. Mesure sans cookie : le visiteur est reconnu par une empreinte hachée renouvelée chaque jour, l'adresse IP n'est jamais conservée. Les robots et le site en local ne sont pas comptés.
 - Les données sont stockées dans Upstash Redis (gratuit), 400 jours.
-- `admin.html` (non indexée) affiche visites, pages vues, visiteurs uniques, appareils, pages, sources, navigateurs, systèmes et pays. Les chiffres viennent de `api/stats.js`, protégé par mot de passe.
+- `admin.html` (non indexée) affiche visites, pages vues, visiteurs uniques, clics sur « Me contacter » (menu et accueil), sur l’e-mail et GitHub, appareils, pages, sources, navigateurs, systèmes et pays. Les chiffres viennent de `api/stats.js`, protégé par mot de passe.
 - Case « Ne pas compter mes visites sur ce navigateur » dans la page admin.
 
 **Mise en route sur Vercel**

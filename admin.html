@@ -64,7 +64,7 @@
     .seg button[aria-pressed=true] { background: var(--primary); color: var(--on-primary); font-weight: 600; }
 
     /* Chiffres clés */
-    .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 16px; }
+    .kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 16px; }
     .card { background: var(--card); border: 1px solid var(--hairline); border-radius: 12px; padding: 24px; min-width: 0; }
     .kpi .label { font-size: 14px; color: var(--muted); }
     .kpi .value { font-family: var(--display); font-weight: 800; font-size: 40px; line-height: 1.1; color: var(--ink); margin-top: 6px; font-variant-numeric: tabular-nums; }
@@ -99,11 +99,13 @@
     .check input { accent-color: var(--primary); width: 18px; height: 18px; }
 
     @media (max-width: 960px) {
-      .kpis { grid-template-columns: repeat(2, 1fr); }
+      .kpis { grid-template-columns: repeat(3, 1fr); }
       .grid2 { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 640px) {
       main { padding-top: 32px; }
+      .kpis { grid-template-columns: repeat(2, 1fr); }
+      .kpis .kpi:last-child { grid-column: 1 / -1; }
       .kpi .value { font-size: 32px; }
       .card { padding: 20px; }
       .grid2 { grid-template-columns: 1fr; }
@@ -152,6 +154,7 @@
         <div class="card kpi"><div class="label">Pages vues</div><div class="value" id="kViews">—</div><div class="hint" id="kPerVisit">&nbsp;</div></div>
         <div class="card kpi"><div class="label">Visiteurs uniques</div><div class="value" id="kUniques">—</div><div class="hint">Comptés une fois par jour</div></div>
         <div class="card kpi"><div class="label">Sur mobile</div><div class="value" id="kMobile">—</div><div class="hint">Part des pages vues</div></div>
+        <div class="card kpi"><div class="label">Clics « Me contacter »</div><div class="value" id="kContacts">—</div><div class="hint" id="kContactRate">&nbsp;</div></div>
       </div>
 
       <div class="card">
@@ -163,6 +166,7 @@
       </div>
 
       <div class="grid2">
+        <div class="card"><h2>Clics contact</h2><ul class="rows" id="clicks"></ul></div>
         <div class="card"><h2>Appareils</h2><ul class="rows" id="devices"></ul></div>
         <div class="card"><h2>Pages</h2><ul class="rows" id="pages"></ul></div>
         <div class="card"><h2>Sources</h2><ul class="rows" id="sources"></ul></div>
@@ -240,7 +244,11 @@
       d.devices.forEach(function (x) { all += x.value; if (x.label !== 'Ordinateur') mob += x.value; });
       $('kMobile').textContent = all ? Math.round(mob / all * 100) + ' %' : '—';
 
+      $('kContacts').textContent = nf.format(t.contacts);
+      $('kContactRate').textContent = 'Sur ' + nf.format(t.visits) + ' visite' + (t.visits > 1 ? 's' : '');
+
       chart(d.daily);
+      rows('clicks', d.clicks);
       rows('devices', d.devices);
       rows('pages', d.pages.map(function (x) { return { label: pageName(x.label), value: x.value }; }));
       rows('sources', d.sources);
@@ -315,7 +323,7 @@
         return;
       }
       var x = lastDaily[i];
-      el.innerHTML = '<strong>' + fmtDay(x.date, true) + '</strong> · ' + nf.format(x.views) + ' pages vues · ' + nf.format(x.visits) + ' visites · ' + nf.format(x.uniques) + ' visiteurs';
+      el.innerHTML = '<strong>' + fmtDay(x.date, true) + '</strong> · ' + nf.format(x.views) + ' pages vues · ' + nf.format(x.visits) + ' visites · ' + nf.format(x.uniques) + ' visiteurs · ' + nf.format(x.contacts) + ' clics contact';
     }
 
     $('chart').addEventListener('pointermove', function (e) { var t = e.target.closest('[data-i]'); if (t) readout(+t.dataset.i); });

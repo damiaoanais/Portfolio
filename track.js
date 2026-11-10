@@ -24,9 +24,23 @@
     v: first ? 1 : 0
   });
 
-  if (navigator.sendBeacon) {
-    navigator.sendBeacon('/api/collect', new Blob([data], { type: 'text/plain' }));
-  } else {
-    fetch('/api/collect', { method: 'POST', body: data, keepalive: true }).catch(function () {});
+  function send(body) {
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon('/api/collect', new Blob([body], { type: 'text/plain' }));
+    } else {
+      fetch('/api/collect', { method: 'POST', body: body, keepalive: true }).catch(function () {});
+    }
   }
+  send(data);
+
+  // Clics sur les boutons « Me contacter » et les liens de contact.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '', label = '';
+    if (/^\s*Me contacter\s*$/i.test(a.textContent)) label = a.closest('header') ? 'Me contacter (menu)' : 'Me contacter (accueil)';
+    else if (href.indexOf('mailto:') === 0) label = 'E-mail';
+    else if (/github\.com/i.test(href)) label = 'GitHub';
+    if (label) send(JSON.stringify({ e: 'click', k: label, p: location.pathname }));
+  });
 })();

@@ -11,7 +11,7 @@ function allowed(req) {
   return crypto.timingSafeEqual(a, b);
 }
 
-const HASHES = { page: 'pages', dev: 'devices', br: 'browsers', os: 'os', ctry: 'countries', ref: 'sources' };
+const HASHES = { page: 'pages', dev: 'devices', br: 'browsers', os: 'os', ctry: 'countries', ref: 'sources', clk: 'clicks' };
 
 module.exports = async (req, res) => {
   res.setHeader('Cache-Control', 'no-store');
@@ -37,11 +37,15 @@ module.exports = async (req, res) => {
 
   const breakdown = {};
   names.forEach(n => (breakdown[HASHES[n]] = {}));
-  dates.forEach(() => names.forEach(n => {
+  dates.forEach((d, di) => names.forEach(n => {
     const h = r[i++] || [];
     const tgt = breakdown[HASHES[n]];
-    for (let k = 0; k < h.length; k += 2) tgt[h[k]] = (tgt[h[k]] || 0) + (+h[k + 1] || 0);
+    for (let k = 0; k < h.length; k += 2) {
+      tgt[h[k]] = (tgt[h[k]] || 0) + (+h[k + 1] || 0);
+      if (n === 'clk' && h[k].indexOf('Me contacter') === 0) daily[di].contacts = (daily[di].contacts || 0) + (+h[k + 1] || 0);
+    }
   }));
+  daily.forEach(x => (x.contacts = x.contacts || 0));
 
   const sorted = {};
   Object.keys(breakdown).forEach(k => {
@@ -53,6 +57,7 @@ module.exports = async (req, res) => {
     totals: {
       views: daily.reduce((s, x) => s + x.views, 0),
       visits: daily.reduce((s, x) => s + x.visits, 0),
+      contacts: daily.reduce((s, x) => s + x.contacts, 0),
       uniques
     },
     daily,
