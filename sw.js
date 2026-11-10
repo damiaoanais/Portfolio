@@ -1,6 +1,6 @@
 // Service worker : le site reste consultable hors ligne.
-const CACHE = 'portfolio-v2';
-const ASSETS = ['./', './index.html', './projets.html', './siana-cutout.webp', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
+const CACHE = 'portfolio-v3';
+const ASSETS = ['./', './index.html', './projets.html', './outils.html', './siana-cutout.webp', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== CACHE).map(x => caches.delete(x)))).then(() => self.clients.claim())); });
 // Réseau d'abord (le site reste à jour), cache en secours hors ligne.
