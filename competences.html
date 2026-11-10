@@ -106,7 +106,8 @@
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
     .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
     .chips li { font-size: 15px; font-weight: 500; color: var(--ink); border: 1px solid var(--hairline-strong); border-radius: 999px; padding: 6px 14px; background: #0f0f0f; }
-    .sub { font-size: 14px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .sub { font-family: var(--display); font-weight: 800; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.1; letter-spacing: -.01em; color: var(--ink); display: flex; align-items: center; gap: 16px; }
+    .sub::before { content: ""; width: 36px; height: 4px; border-radius: 2px; background: var(--primary); }
     @media (max-width: 860px) { .grid-3 { grid-template-columns: 1fr; } }
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
     .card { background: var(--card); border: 1px solid var(--hairline); border-radius: 12px; padding: 24px; transition: transform .3s cubic-bezier(.2,.7,.2,1), border-color .3s, box-shadow .3s; }
@@ -299,7 +300,7 @@
         <p class="eyebrow">Compétences</p>
         <h2>Le détail de mes compétences. <span class="hl">Sans en rajouter.</span></h2>
         <p class="lead">Ce que je sais faire et ce que je suis, regroupé par type de compétence.</p>
-        <h3 class="sub" style="margin-top: 48px;">Savoir-faire</h3>
+        <h3 class="sub" style="margin-top: 56px;">Savoir-faire</h3>
         <div class="grid grid-3" style="margin-top: 20px;">
           <article class="card">
             <h3>Gestion de projet</h3>
@@ -330,7 +331,7 @@
             <ul class="chips"><li>Optimisation SEO</li><li>Création de newsletter</li><li>Retail media</li></ul>
           </article>
         </div>
-        <h3 class="sub" style="margin-top: 48px;">Savoir-être</h3>
+        <h3 class="sub" style="margin-top: 64px;">Savoir-être</h3>
         <ul class="chips" style="margin-top: 20px;"><li>Travail d'équipe</li><li>Technophile</li><li>Curieuse</li><li>Autonome</li></ul>
         <p style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 12px;">
           <a class="btn btn-secondary" href="index.html#competences"><span aria-hidden="true" style="margin: 0 8px 0 0;">&larr;</span>Retour aux compétences</a>
