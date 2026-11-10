@@ -110,6 +110,8 @@
     .sub::before { content: ""; width: 36px; height: 4px; border-radius: 2px; background: var(--primary); }
     @media (max-width: 860px) { .grid-3 { grid-template-columns: 1fr; } }
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .quote { margin: 20px 0 0; padding: 8px 0 8px 28px; border-left: 4px solid var(--primary); max-width: 860px; }
+    .quote p { font-size: clamp(18px, 1.8vw, 22px); line-height: 1.6; color: var(--ink); font-style: normal; margin: 0; }
     .card { background: var(--card); border: 1px solid var(--hairline); border-radius: 12px; padding: 24px; transition: transform .3s cubic-bezier(.2,.7,.2,1), border-color .3s, box-shadow .3s; }
     .card:hover { transform: translateY(-6px); border-color: var(--primary); }
     .card h3 { font-size: 20px; line-height: 1.3; margin-bottom: 8px; font-weight: 700; }
@@ -332,12 +334,9 @@
           </article>
         </div>
         <h3 class="sub" style="margin-top: 32px;">Savoir-être</h3>
-        <div class="grid grid-3" style="margin-top: 20px;">
-          <article class="card">
-            <h3>Qualités</h3>
-            <ul class="chips"><li>Travail d'équipe</li><li>Technophile</li><li>Autonome</li></ul>
-          </article>
-        </div>
+        <blockquote class="quote">
+          <p>Je peux aussi bien travailler en équipe qu'être totalement en autonomie. J'aime faire évoluer mes compétences, ce qui m'a permis jusqu'ici de travailler sur des projets divers et de me former sur des outils de tout type. Je suis une grande adepte de l'IA et aime tester tout ce qu'elle permet : nous assister, créer des outils et des apps, faciliter notre quotidien, optimiser nos business.</p>
+        </blockquote>
         <p style="margin-top: 80px; display: flex; flex-wrap: wrap; gap: 12px;">
           <a class="btn btn-secondary" href="index.html#competences"><span aria-hidden="true" style="margin: 0 8px 0 0;">&larr;</span>Retour aux compétences</a>
           <a class="btn btn-primary btn-fixed" href="outils.html">Voir les outils que je maîtrise<span aria-hidden="true" style="margin: 0 0 0 10px;">&rarr;</span></a>
