@@ -31,7 +31,6 @@ identity:
     availability: "Disponible"   # [À CONFIRMER : date de début possible]
     opportunities:
       - "CDI"
-      - "Freelance"
       - "[CDD / ALTERNANCE : à garder ou supprimer]"
     working_modes:
       - "Sur site"
