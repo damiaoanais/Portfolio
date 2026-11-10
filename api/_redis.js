@@ -1,7 +1,12 @@
 // Accès à Upstash Redis par son API REST (aucune dépendance npm).
-// Variables posées automatiquement par l'intégration Upstash de Vercel.
-const URL_ = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
-const TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+// Variables posées automatiquement par l'intégration Upstash de Vercel,
+// avec ou sans préfixe personnalisé (ex. MY_PREFFIX_KV_REST_API_URL).
+function env(suffix) {
+  const key = Object.keys(process.env).find(k => k === suffix || k.endsWith('_' + suffix));
+  return key ? process.env[key] : undefined;
+}
+const URL_ = env('KV_REST_API_URL') || env('UPSTASH_REDIS_REST_URL');
+const TOKEN = env('KV_REST_API_TOKEN') || env('UPSTASH_REDIS_REST_TOKEN');
 
 async function pipeline(commands) {
   if (!URL_ || !TOKEN) throw new Error('Base Redis non configurée');
