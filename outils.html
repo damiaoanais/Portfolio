@@ -103,6 +103,8 @@
     .grid { display: grid; gap: 24px; }
     .grid-4 { grid-template-columns: repeat(4, 1fr); margin-top: 16px; }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .chips li { font-size: 15px; font-weight: 500; color: var(--ink); border: 1px solid var(--hairline-strong); border-radius: 999px; padding: 6px 14px; background: #0f0f0f; }
     @media (max-width: 860px) { .grid-3 { grid-template-columns: 1fr; } }
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
     .card { background: var(--card); border: 1px solid var(--hairline); border-radius: 12px; padding: 24px; transition: transform .3s cubic-bezier(.2,.7,.2,1), border-color .3s, box-shadow .3s; }
@@ -296,17 +298,37 @@
         <h2>Les outils que je maîtrise. <span class="hl">Pour passer de l'idée au produit.</span></h2>
         <p class="lead">Ma boîte à outils pour construire avec l'IA et le no-code.</p>
         <div class="grid grid-3" style="margin-top: 40px;">
-          <article class="card skillbox">
+          <article class="card">
             <h3>IA &amp; assistants</h3>
-            <ul><li><strong>Claude</strong> — assistant IA pour cadrer, rédiger et construire</li><li><strong>Cursor</strong> — éditeur de code assisté par IA</li><li><strong>Lovable</strong> — génération d'applications par IA</li></ul>
+            <ul class="chips"><li>Claude</li><li>ChatGPT</li><li>Gemini</li></ul>
           </article>
-          <article class="card skillbox">
+          <article class="card">
+            <h3>No-code &amp; design</h3>
+            <ul class="chips"><li>Figma</li><li>Softr</li><li>Lovable</li></ul>
+          </article>
+          <article class="card">
             <h3>Automatisation &amp; données</h3>
-            <ul><li><strong>n8n</strong> — automatisation de workflows</li><li><strong>Airtable</strong> — bases de données no-code</li><li><strong>Supabase</strong> — base de données et back-end</li></ul>
+            <ul class="chips"><li>n8n</li><li>Airtable</li><li>Supabase</li></ul>
           </article>
-          <article class="card skillbox">
-            <h3>Interface &amp; code</h3>
-            <ul><li><strong>Softr</strong> — interfaces no-code</li><li><strong>React</strong> — bibliothèque d'interfaces web</li><li><strong>VS Code</strong> — éditeur de code</li><li><strong>Orca</strong></li></ul>
+          <article class="card">
+            <h3>Code &amp; mise en ligne</h3>
+            <ul class="chips"><li>Cursor</li><li>VS Code</li><li>GitHub</li><li>Vercel</li><li>Netlify</li></ul>
+          </article>
+          <article class="card">
+            <h3>Gestion de projet</h3>
+            <ul class="chips"><li>Jira</li><li>Asana</li><li>Wrike</li><li>Redmine</li><li>Microsoft Planner</li></ul>
+          </article>
+          <article class="card">
+            <h3>Documentation &amp; collaboration</h3>
+            <ul class="chips"><li>Confluence</li><li>Notion</li><li>SharePoint</li><li>Suite Microsoft</li></ul>
+          </article>
+          <article class="card">
+            <h3>Analytics, data &amp; marketing</h3>
+            <ul class="chips"><li>GA4</li><li>Adobe Analytics</li><li>Contentsquare</li><li>Looker Studio</li><li>Domo</li><li>Salesforce Marketing Cloud</li></ul>
+          </article>
+          <article class="card">
+            <h3>Autres</h3>
+            <ul class="chips"><li>Orca</li><li>Oasis</li></ul>
           </article>
         </div>
         <p style="margin-top: 40px;">
