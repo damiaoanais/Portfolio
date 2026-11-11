@@ -28,7 +28,7 @@ identity:
   mobility: "[PARIS / ÎLE-DE-FRANCE / FRANCE / EUROPE]"
 
   professional_status:
-    availability: "Disponible 2027"
+    availability: "Disponible en 2027"
     opportunities:
       - "CDI"
       - "[CDD / ALTERNANCE : à garder ou supprimer]"
@@ -131,7 +131,7 @@ home:
       j'associe réflexion produit, no-code et intelligence
       artificielle.
     availability:
-      label: "Disponible 2027"
+      label: "Disponible en 2027"
       description: >-
         À la recherche d'une opportunité pour contribuer
         à des produits concrets au sein d'une équipe.
