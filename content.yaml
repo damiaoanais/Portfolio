@@ -203,10 +203,10 @@ home:
 
   final_cta:
     eyebrow: "ET MAINTENANT ?"
-    headline: "Construisons quelque chose d'utile."
+    headline: "Un projet où l'IA peut faire la différence ? Parlons-en."
     description: >-
-      Je cherche une équipe où contribuer à des produits concrets
-      et continuer à progresser.
+      Je cherche une équipe ambitieuse où mettre l'IA et le no-code
+      au service de vos projets, quels qu'ils soient, et progresser vite.
     primary_cta: { label: "Me contacter", href: "#contact" }
     secondary_cta: { label: "Consulter mon CV", href: "[URL CV]" }
 
