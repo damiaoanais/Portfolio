@@ -108,6 +108,12 @@
     @media (max-width: 860px) { .grid-3 { grid-template-columns: 1fr; } }
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
     .wip { display: inline-block; margin-left: 8px; vertical-align: middle; font-family: var(--text); font-size: 12px; font-weight: 600; letter-spacing: .3px; color: var(--primary); border: 1px solid var(--primary); border-radius: 999px; padding: 2px 10px; }
+    .chips li { position: relative; transition: border-color .2s, background .2s; }
+    .chips li a { color: inherit; text-decoration: none; }
+    .chips li a::after { content: ""; position: absolute; inset: 0; border-radius: 999px; }
+    .chips li:has(a):hover { border-color: var(--primary); background: #151012; }
+    .chips li a:focus-visible { outline: none; }
+    .chips li:has(a:focus-visible) { outline: 2px solid var(--primary); outline-offset: 2px; }
     .grid.equal { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
     @media (min-width: 640px) { .grid.equal { grid-auto-rows: 1fr; } }
     .card { background: var(--card); border: 1px solid var(--hairline); border-radius: 12px; padding: 24px; transition: transform .3s cubic-bezier(.2,.7,.2,1), border-color .3s, box-shadow .3s; }
@@ -303,39 +309,39 @@
         <div class="grid grid-3 equal" style="margin-top: 40px;">
           <article class="card">
             <h3>IA &amp; assistants</h3>
-            <ul class="chips"><li>Claude</li><li>ChatGPT</li><li>Gemini</li><li>DeepSeek</li></ul>
+            <ul class="chips"><li><a href="https://claude.ai" target="_blank" rel="noopener noreferrer">Claude</a></li><li><a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">ChatGPT</a></li><li><a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer">Gemini</a></li><li><a href="https://www.deepseek.com" target="_blank" rel="noopener noreferrer">DeepSeek</a></li></ul>
           </article>
           <article class="card">
             <h3>No-code &amp; design</h3>
-            <ul class="chips"><li>Figma</li><li>Softr</li><li>Lovable</li></ul>
+            <ul class="chips"><li><a href="https://www.figma.com" target="_blank" rel="noopener noreferrer">Figma</a></li><li><a href="https://www.softr.io" target="_blank" rel="noopener noreferrer">Softr</a></li><li><a href="https://lovable.dev" target="_blank" rel="noopener noreferrer">Lovable</a></li></ul>
           </article>
           <article class="card">
             <h3>Automatisation &amp; base de données</h3>
-            <ul class="chips"><li>n8n</li><li>Airtable</li><li>Supabase</li></ul>
+            <ul class="chips"><li><a href="https://n8n.io" target="_blank" rel="noopener noreferrer">n8n</a></li><li><a href="https://www.airtable.com" target="_blank" rel="noopener noreferrer">Airtable</a></li><li><a href="https://supabase.com" target="_blank" rel="noopener noreferrer">Supabase</a></li></ul>
           </article>
           <article class="card">
             <h3>IDE</h3>
-            <ul class="chips"><li>Cursor</li><li>VS Code</li><li>Orca</li></ul>
+            <ul class="chips"><li><a href="https://cursor.com" target="_blank" rel="noopener noreferrer">Cursor</a></li><li><a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer">VS Code</a></li><li>Orca</li></ul>
           </article>
           <article class="card">
             <h3>Versioning &amp; mise en ligne</h3>
-            <ul class="chips"><li>GitHub</li><li>Vercel</li><li>Netlify</li></ul>
+            <ul class="chips"><li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li><li><a href="https://vercel.com" target="_blank" rel="noopener noreferrer">Vercel</a></li><li><a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">Netlify</a></li></ul>
           </article>
           <article class="card">
             <h3>Gestion de projet</h3>
-            <ul class="chips"><li>Jira</li><li>Asana</li><li>Wrike</li><li>Redmine</li><li>Microsoft Planner</li></ul>
+            <ul class="chips"><li><a href="https://www.atlassian.com/software/jira" target="_blank" rel="noopener noreferrer">Jira</a></li><li><a href="https://asana.com" target="_blank" rel="noopener noreferrer">Asana</a></li><li><a href="https://www.wrike.com" target="_blank" rel="noopener noreferrer">Wrike</a></li><li><a href="https://www.redmine.org" target="_blank" rel="noopener noreferrer">Redmine</a></li><li><a href="https://www.microsoft.com/microsoft-365/planner/microsoft-planner" target="_blank" rel="noopener noreferrer">Microsoft Planner</a></li></ul>
           </article>
           <article class="card">
             <h3>Documentation &amp; collaboration</h3>
-            <ul class="chips"><li>Confluence</li><li>Notion</li><li>SharePoint</li><li>Suite Microsoft</li></ul>
+            <ul class="chips"><li><a href="https://www.atlassian.com/software/confluence" target="_blank" rel="noopener noreferrer">Confluence</a></li><li><a href="https://www.notion.com" target="_blank" rel="noopener noreferrer">Notion</a></li><li><a href="https://www.microsoft.com/microsoft-365/sharepoint/collaboration" target="_blank" rel="noopener noreferrer">SharePoint</a></li><li><a href="https://www.microsoft.com/microsoft-365" target="_blank" rel="noopener noreferrer">Suite Microsoft</a></li></ul>
           </article>
           <article class="card">
             <h3>Analytics, data &amp; marketing</h3>
-            <ul class="chips"><li>GA4</li><li>Adobe Analytics</li><li>Contentsquare</li><li>Looker Studio</li><li>Domo</li><li>Salesforce Marketing Cloud</li></ul>
+            <ul class="chips"><li><a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer">GA4</a></li><li><a href="https://business.adobe.com/products/analytics/adobe-analytics.html" target="_blank" rel="noopener noreferrer">Adobe Analytics</a></li><li><a href="https://contentsquare.com" target="_blank" rel="noopener noreferrer">Contentsquare</a></li><li><a href="https://lookerstudio.google.com" target="_blank" rel="noopener noreferrer">Looker Studio</a></li><li><a href="https://www.domo.com" target="_blank" rel="noopener noreferrer">Domo</a></li><li><a href="https://www.salesforce.com/marketing/" target="_blank" rel="noopener noreferrer">Salesforce Marketing Cloud</a></li></ul>
           </article>
           <article class="card">
             <h3>Création de contenu <span class="wip">En cours</span></h3>
-            <ul class="chips"><li>Kling</li><li>Runway</li><li>Mitt.ia</li><li>Higgsfield</li></ul>
+            <ul class="chips"><li><a href="https://klingai.com" target="_blank" rel="noopener noreferrer">Kling</a></li><li><a href="https://runwayml.com" target="_blank" rel="noopener noreferrer">Runway</a></li><li>Mitt.ia</li><li><a href="https://higgsfield.ai" target="_blank" rel="noopener noreferrer">Higgsfield</a></li></ul>
           </article>
           <article class="card">
             <h3>Facturation</h3>
