@@ -1,6 +1,6 @@
 # Portfolio — Anaïs DAMIAO
 
-Portfolio personnel : Product Builder IA & no-code, Paris. L'IA et le no-code au service de vos projets.
+Portfolio personnel : Marketing Digital, IA & no-code, Paris. L'IA et le no-code au service de vos projets.
 
 - Site en ligne : https://anais-damiao.vercel.app/
 - Dépôt : https://github.com/damiaoanais/Portfolio-test

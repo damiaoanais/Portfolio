@@ -1,7 +1,7 @@
 # ============================================================
 # PORTFOLIO CONTENT — ANAÏS DAMIAO
 # Version 4 — 6 novembre 2026 (reflète le site en ligne)
-# Profil : Product Builder · IA & No-code
+# Profil : Marketing Digital, IA & No-code
 # Règle : tout ce qui est entre [CROCHETS] est à compléter par toi.
 # Rien n'est inventé : si une info manque, elle reste en crochets.
 # ============================================================
@@ -23,7 +23,7 @@ identity:
   display_name: "Anaïs DAMIAO"
   initials: "AD"
 
-  title: "Product Builder · IA & No-code"
+  title: "Marketing Digital, IA & No-code"
   location: "Paris, France"
   mobility: "[PARIS / ÎLE-DE-FRANCE / FRANCE / EUROPE]"
 
@@ -124,7 +124,7 @@ navigation:
 
 home:
   hero:
-    eyebrow: "PRODUCT BUILDER · IA & NO-CODE · PARIS"
+    eyebrow: "MARKETING DIGITAL · IA & NO-CODE · PARIS"
     headline: "Embarquement immédiat pour vos idées : je les mène jusqu'au produit digital."   # thème hôtesse de l'air
     subheadline: >-
       De la compréhension du besoin au prototype fonctionnel,
@@ -408,10 +408,10 @@ footer:
   copyright: "© 2026 Anaïs DAMIAO"
 
 seo:
-  site_name: "Anaïs DAMIAO — Product Builder"
-  default_title: "Anaïs DAMIAO | Product Builder IA & No-code — Paris"
+  site_name: "Anaïs DAMIAO — Marketing Digital, IA & No-code"
+  default_title: "Anaïs DAMIAO | Marketing Digital, IA & No-code — Paris"
   default_description: >-
-    Portfolio d'Anaïs DAMIAO, Product Builder à Paris.
+    Portfolio d'Anaïs DAMIAO, marketing digital, IA et no-code à Paris.
     Projets de conception produit, no-code et IA.
   locale: "fr_FR"
   site_url: "https://portfolio-exercice-test.netlify.app/"
