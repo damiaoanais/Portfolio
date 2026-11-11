@@ -9,12 +9,12 @@ Portfolio personnel : Product Builder IA & no-code, Paris. L'IA et le no-code au
 
 | Page | Contenu |
 | --- | --- |
-| `index.html` | Accueil, avec les sections ancrées du menu : Projets, Compétences, Parcours, Blog, Contact |
+| `index.html` | Accueil, avec les sections ancrées du menu : Projets, Compétences, Parcours, Contact |
 | `projets.html` | Liste de l'ensemble des projets |
 | `competences.html` | Détail des compétences (savoir-faire par catégorie) et citation « À noter » |
 | `outils.html` | Outils maîtrisés, regroupés par type |
 
-Le Blog est une section de la page d'accueil (ancre `#blog`). Les premiers articles sont en préparation.
+Le Blog est prévu comme section de la page d'accueil (ancre `#blog`) : masqué dans `index.html` (en commentaire) en attendant les premiers articles.
 
 ## Technique
 
@@ -26,7 +26,7 @@ Le Blog est une section de la page d'accueil (ancre `#blog`). Les premiers artic
 
 ## Version mobile et PWA
 
-- Mobile (< 768 px) : barre d'onglets fixe en bas (Accueil, Projets, Compétences, Parcours, Blog, Contact), portrait recadré dans le premier écran.
+- Mobile (< 768 px) : barre d'onglets fixe en bas (Accueil, Projets, Compétences, Parcours, Contact), portrait recadré dans le premier écran.
 - PWA : `manifest.webmanifest`, `sw.js` (hors ligne, réseau d'abord, cache versionné), icônes dans `icons/` (monogramme « AD » rose sur noir).
 - Installation : ouvrir le site sur mobile, puis « Ajouter à l'écran d'accueil ».
 - Arrivée toujours sur l'accueil, même après un rechargement.
