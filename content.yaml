@@ -182,7 +182,7 @@ home:
         description: "Réaliser une solution fonctionnelle avec des outils adaptés."
         activities:
           - "Prototypage no-code"
-          - "Développement assisté par IA"
+          - "Vibe coding (développement assisté par IA)"
           - "Automatisation de workflows"
       - id: "improve"
         title: "04. Améliorer"
