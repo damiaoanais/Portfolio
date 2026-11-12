@@ -106,6 +106,13 @@
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
     .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
     .chips li { font-size: 15px; font-weight: 500; color: var(--ink); border: 1px solid var(--hairline-strong); border-radius: 999px; padding: 6px 14px; background: #0f0f0f; }
+    .chips li.has-ctx { padding: 0; }
+    .chips li.has-ctx summary { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; list-style: none; padding: 6px 14px; }
+    .chips li.has-ctx summary::-webkit-details-marker { display: none; }
+    .chips li.has-ctx summary::after { content: ""; flex: none; width: 6px; height: 6px; border-right: 2px solid var(--primary); border-bottom: 2px solid var(--primary); transform: rotate(45deg) translateY(-2px); transition: transform .25s; }
+    .chips li.has-ctx details[open] summary::after { transform: rotate(-135deg) translate(-2px, -1px); }
+    .chips li.has-ctx:has(details[open]) { flex-basis: 100%; border-radius: 16px; border-color: var(--primary); }
+    .chips li.has-ctx p { margin: 0; padding: 0 16px 12px; font-size: 14px; font-weight: 400; line-height: 1.55; color: var(--muted); }
     .sub { font-family: var(--display); font-weight: 800; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.1; letter-spacing: -.01em; color: var(--ink); display: flex; align-items: center; gap: 16px; }
     .sub::before { content: ""; width: 36px; height: 4px; border-radius: 2px; background: var(--primary); }
     @media (max-width: 860px) { .grid-3 { grid-template-columns: 1fr; } }
@@ -319,27 +326,27 @@
           </article>
           <article class="card">
             <h3>Données &amp; analytics</h3>
-            <ul class="chips"><li>Gestion de base de données</li><li>Mise en place de tracking</li><li>Création de dashboard</li><li>Analyse de données</li></ul>
+            <ul class="chips"><li>Gestion de base de données</li><li class="has-ctx"><details><summary>Mise en place de tracking</summary><p>Chez Valtech : tagging plan, plan d'implémentation, ticketing pour les développeurs, tests et paramétrage du TMS en JavaScript (Adobe Analytics). Chez Atlantic : tracking du nouveau site (GA4, avec une agence).</p></details></li><li class="has-ctx"><details><summary>Création de dashboard</summary><p>Chez Valtech : dashboards multisources, dans des projets data (DataLake, personas).</p></details></li><li class="has-ctx"><details><summary>Analyse de données</summary><p>Chez Valtech : analyse des données de tracking et de dashboards. Chez Atlantic : analyse des campagnes Retail Media et des newsletters B2C.</p></details></li></ul>
           </article>
           <article class="card">
             <h3>IA &amp; agents</h3>
-            <ul class="chips"><li>Vibe coding (développement assisté par IA)</li><li>Mise en place d'un chatbot</li><li>Mise en place d'un RAG</li><li>Paramétrage d'un agent IA</li><li>Paramétrage du harnais</li></ul>
+            <ul class="chips"><li class="has-ctx"><details><summary>Vibe coding (développement assisté par IA)</summary><p>Ce portfolio a été construit avec Claude, guidé et relu par moi.</p></details></li><li>Mise en place d'un chatbot</li><li>Mise en place d'un RAG</li><li>Paramétrage d'un agent IA</li><li>Paramétrage du harnais</li></ul>
           </article>
           <article class="card">
             <h3>Produit &amp; UX</h3>
-            <ul class="chips"><li>Étude UX</li><li>Maquettage</li><li>MVP no-code</li><li>Rédaction PRD assistée par IA</li><li>Design system assisté par IA</li></ul>
+            <ul class="chips"><li class="has-ctx"><details><summary>Étude UX</summary><p>Chez Valtech (Rolex) et chez Atlantic : études UX avec ContentSquare, notamment pour orienter la refonte du site Atlantic.</p></details></li><li>Maquettage</li><li>MVP no-code</li><li>Rédaction PRD assistée par IA</li><li>Design system assisté par IA</li></ul>
           </article>
           <article class="card">
             <h3>Gestion de projet</h3>
-            <ul class="chips"><li>Cadrage projet</li><li>Coordination</li><li>Restructuration projet</li><li>Gestion de projet</li><li>Mise en place de procédures</li><li>Documentation</li><li>Former des équipes</li></ul>
+            <ul class="chips"><li>Cadrage projet</li><li>Coordination</li><li>Restructuration projet</li><li class="has-ctx"><details><summary>Gestion de projet</summary><p>Chez Atlantic, Valtech et Naturalia : pilotage de projets, dont les refontes de site (avec un binôme chez Atlantic, avec un consultant chez Naturalia) et des projets data chez Valtech.</p></details></li><li class="has-ctx"><details><summary>Mise en place de procédures</summary><p>Chez Naturalia : mise en place du Click &amp; Collect et de la livraison en 24h, avec le process associé.</p></details></li><li class="has-ctx"><details><summary>Documentation</summary><p>Chez Naturalia : création d'un guide pour les magasins. Chez Atlantic : structuration d'un SharePoint interne pour l'équipe marketing.</p></details></li><li class="has-ctx"><details><summary>Former des équipes</summary><p>Chez Naturalia : formation des magasins au Click &amp; Collect et à la livraison en 24h (guide, outils et process).</p></details></li></ul>
           </article>
           <article class="card">
             <h3>Développement</h3>
-            <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>SQL</li></ul>
+            <ul class="chips"><li>HTML</li><li>CSS</li><li class="has-ctx"><details><summary>JavaScript</summary><p>Chez Valtech : paramétrage du TMS en JavaScript (Adobe Analytics).</p></details></li><li>SQL</li></ul>
           </article>
           <article class="card">
             <h3>Marketing digital</h3>
-            <ul class="chips"><li>Optimisation SEO</li><li>Création de newsletter</li><li>Retail media</li></ul>
+            <ul class="chips"><li>Optimisation SEO</li><li class="has-ctx"><details><summary>Création de newsletter</summary><p>Chez Atlantic : création, envoi et analyse des newsletters B2C avec Salesforce Marketing Cloud (SFMC).</p></details></li><li class="has-ctx"><details><summary>Retail media</summary><p>Chez Atlantic : gestion du planning, mise en place et analyse des campagnes Retail Media Leroy Merlin.</p></details></li></ul>
           </article>
           <article class="card">
             <h3>Création de contenu <span class="wip">En cours</span></h3>
