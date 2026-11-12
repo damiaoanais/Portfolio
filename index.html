@@ -238,6 +238,12 @@
     .timeline { display: grid; gap: 24px; margin-top: 40px; }
     .step { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--hairline); }
     .step:last-child { border-bottom: 0; }
+    .proj { margin-top: 8px; }
+    .proj summary { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; list-style: none; font-size: 14px; font-weight: 600; color: var(--primary); }
+    .proj summary::-webkit-details-marker { display: none; }
+    .proj summary::after { content: ""; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform .25s; }
+    .proj[open] summary::after { transform: rotate(-135deg) translate(-2px, -1px); }
+    .proj ul { margin: 12px 0 0; padding-left: 20px; color: var(--muted); font-size: 16px; line-height: 1.6; }
     .step .when { font-size: 14px; color: var(--muted); font-weight: 500; }
     .step h3 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
 
@@ -473,15 +479,15 @@
         <div class="timeline">
           <div class="step">
             <div class="when">Mars 2024 – août 2026</div>
-            <div><h3>Atlantic France — Cheffe de projet digital (CDI)</h3><p>Pilotage de projets digitaux en entreprise.</p></div>
+            <div><h3>Atlantic France — Cheffe de projet digital (CDI)</h3><details class="proj"><summary>Voir les projets</summary><ul><li>Pilotage de projets digitaux en entreprise</li></ul></details></div>
           </div>
           <div class="step">
             <div class="when">Sept. 2018 – mai 2024</div>
-            <div><h3>Valtech — Cheffe de projet digital &amp; analytics</h3><p>Marché du luxe.</p></div>
+            <div><h3>Valtech — Cheffe de projet digital &amp; analytics</h3><details class="proj"><summary>Voir les projets</summary><ul><li>Projets digitaux et analytics pour le marché du luxe</li></ul></details></div>
           </div>
           <div class="step">
             <div class="when">Sept. 2016 – mars 2018</div>
-            <div><h3>Naturalia France — Cheffe de projet digital</h3><p>Gestion du catalogue produits, SEA/SEO et refonte de site.</p></div>
+            <div><h3>Naturalia France — Cheffe de projet digital</h3><details class="proj"><summary>Voir les projets</summary><ul><li>Gestion du catalogue produits</li><li>SEA / SEO</li><li>Refonte de site</li></ul></details></div>
           </div>
         </div>
         <p class="note" style="margin-top: 32px;"><span class="wip" style="margin: 0 10px 0 0;">En cours</span>Formation chez Jedha : Product Builder IA No code Full stack (RNCP Bac+3/4), pour construire des produits digitaux avec l'IA et le no-code.</p>
