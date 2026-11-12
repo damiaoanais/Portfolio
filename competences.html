@@ -112,13 +112,10 @@
     .chips li.has-ctx summary::after { content: ""; flex: none; width: 6px; height: 6px; border-right: 2px solid var(--primary); border-bottom: 2px solid var(--primary); transform: rotate(45deg) translateY(-2px); transition: transform .25s; }
     .chips li.has-ctx details[open] summary::after { transform: rotate(-135deg) translate(-2px, -1px); }
     .chips li.has-ctx:has(details[open]) { flex-basis: 100%; border-radius: 16px; border-color: var(--primary); }
-    .lvl { padding: 0 16px 22px; }
-    .lvl-top { display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; font-weight: 600; letter-spacing: .3px; color: var(--muted); }
-    .lvl-top b { color: var(--primary); font-weight: 600; }
-    .lvl-track { position: relative; height: 4px; margin: 10px 6px 4px; border-radius: 999px; background: var(--hairline-strong); }
-    .lvl-track::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: calc((var(--l) - 1) / 3 * 100%); border-radius: 999px; background: var(--primary); }
-    .lvl-track::after { content: ""; position: absolute; top: 50%; left: calc((var(--l) - 1) / 3 * 100%); width: 14px; height: 14px; border-radius: 50%; background: var(--primary); border: 2px solid #0f0f0f; transform: translate(-50%, -50%); }
-    .lvl-scale { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); opacity: .7; }
+    .lvl { display: flex; align-items: center; gap: 10px; padding: 0 16px 18px; font-size: 13px; color: var(--muted); }
+    .lvl .seg { display: flex; gap: 4px; }
+    .lvl .seg span { width: 28px; height: 5px; border-radius: 3px; background: var(--hairline-strong); }
+    .lvl .seg span.on { background: var(--primary); }
     .chips li.has-ctx p { margin: 0; padding: 0 16px 12px; font-size: 14px; font-weight: 400; line-height: 1.55; color: var(--muted); }
     .sub { font-family: var(--display); font-weight: 800; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.1; letter-spacing: -.01em; color: var(--ink); display: flex; align-items: center; gap: 16px; }
     .sub::before { content: ""; width: 36px; height: 4px; border-radius: 2px; background: var(--primary); }
@@ -329,7 +326,7 @@
         <div class="grid grid-3 equal" style="margin-top: 40px;">
           <article class="card">
             <h3>Automatisation &amp; intégrations</h3>
-            <ul class="chips"><li class="has-ctx"><details><summary>Automatisation de workflows</summary><div class="lvl" style="--l:2"><div class="lvl-top"><span>Mon niveau</span></div><div class="lvl-track"></div><div class="lvl-scale"><span>Débutant</span><span>Intermédiaire</span><span>Avancé</span><span>Expert</span></div></div><p>Dans le cadre d'un projet de fin de formation, j'ai mis en place une automatisation n8n.</p></details></li><li>Connecter des outils (API, MCP, connecteurs)</li></ul>
+            <ul class="chips"><li class="has-ctx"><details><summary>Automatisation de workflows</summary><div class="lvl" role="img" aria-label="Mon niveau : Intermédiaire"><span class="seg"><span class="on"></span><span class="on"></span><span></span><span></span></span>Intermédiaire</div><p>Dans le cadre d'un projet de fin de formation, j'ai mis en place une automatisation n8n.</p></details></li><li>Connecter des outils (API, MCP, connecteurs)</li></ul>
           </article>
           <article class="card">
             <h3>Données &amp; analytics</h3>
