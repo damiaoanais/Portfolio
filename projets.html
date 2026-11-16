@@ -21,9 +21,9 @@
   <style>
     :root {
       color-scheme: dark;
-      --primary: #E4748C;
-      --primary-active: #C95C75;
-      --on-primary: #000000;
+      --primary: #C73C20;
+      --primary-active: #A63019;
+      --on-primary: #FFFFFF;
       --canvas: #000000;
       --canvas-soft: #070707;
       --card: #0C0C0C;
@@ -33,7 +33,7 @@
       --ink: #F5F5F0;
       --body: #BDBDB5;
       --muted: #8A8A82;
-      --gold: #E4748C;
+      --gold: #C73C20;
       --concept: #D9A024;
       --prototype: #6B6B2A;
       --mvp: #1F5D6B;
@@ -79,7 +79,7 @@
     .btn-primary { background: var(--primary); color: var(--on-primary); }
     .btn-primary:hover, .btn-primary:active { background: transparent; color: var(--primary); border-color: var(--primary); }
     .btn-secondary { background: transparent; color: var(--ink); border-color: var(--hairline-strong); }
-    .btn-secondary:hover { border-color: var(--primary); background: rgba(228,116,140,.08); }
+    .btn-secondary:hover { border-color: var(--primary); background: rgba(199,60,32,.08); }
     .btn:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 
     /* Hero */
@@ -90,7 +90,7 @@
     .hero .lead { margin-bottom: 36px; }
     .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
     .meta { display: flex; flex-wrap: wrap; gap: 10px; }
-    .tag { font-size: 14px; background: rgba(228,116,140,.07); border: 1px solid var(--hairline); color: var(--ink); border-radius: 9999px; padding: 6px 14px; }
+    .tag { font-size: 14px; background: rgba(199,60,32,.07); border: 1px solid var(--hairline); color: var(--ink); border-radius: 9999px; padding: 6px 14px; }
 
     .hero .eyebrow, .hero h1, .hero .lead, .hero .actions, .hero .meta { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
     .hero .eyebrow { animation-delay: .05s; }
@@ -122,7 +122,7 @@
     .route-stop i { width: 16px; height: 16px; border-radius: 50%; background: var(--canvas-soft); border: 2px solid var(--hairline-strong); transition: background .3s, border-color .3s, transform .3s; }
     .route-stop.reached { color: var(--ink); }
     .route-stop.reached i { background: var(--primary); border-color: var(--primary); transform: scale(1.15); }
-    .plane { position: absolute; left: 0; top: 20px; width: 32px; height: 32px; margin: -16px 0 0 -16px; color: var(--primary); z-index: 3; filter: drop-shadow(0 0 6px rgba(228,116,140,.45)); will-change: left; }
+    .plane { position: absolute; left: 0; top: 20px; width: 32px; height: 32px; margin: -16px 0 0 -16px; color: var(--primary); z-index: 3; filter: drop-shadow(0 0 6px rgba(199,60,32,.45)); will-change: left; }
     .plane svg { display: block; width: 100%; height: 100%; }
     @media (max-width: 640px) { .route-stop { font-size: 0; gap: 0; } .route { height: 48px; } }
     .card.step-active { border-color: var(--primary); background: #120A0C; }
